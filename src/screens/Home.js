@@ -44,7 +44,7 @@ const Home = ({ navigation }) => {
             <ImageBackground source={{ uri: "https://static.vecteezy.com/system/resources/previews/006/044/573/non_2x/vintage-bakery-background-with-sketched-bread-illustration-free-vector.jpg" }} resizeMode="cover" style={styles.image}>
             <ScrollView>
                 <View style={styles.container}>
-                        <Header title={'Shopping List'} />
+                        <Header title={'Market List'} />
                         <AddItem OnAddItem={() => addItem} handleText={() => handleTextItem} textValue={textItem} />
                         <List list={list} setList={setList} />
                         <View style={styles.buttonContainer}>
