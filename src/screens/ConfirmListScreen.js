@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { StyleSheet, View, ImageBackground, Button } from 'react-native'
 import Header from '../components/Header'
@@ -6,8 +5,8 @@ import List from '../components/List'
 import colors from '../constants/colors'
 
 
-const ConfirmListScreen = ({ list, setList }) => {
-  const navigation = useNavigation();
+const ConfirmListScreen = ({ list, setList, navigation }) => {
+
 
   return (
     <>
