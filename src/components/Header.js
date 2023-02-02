@@ -12,7 +12,6 @@ export default Header
 
 const styles = StyleSheet.create({
     title: {
-        backgroundColor: 'white',
         height: 65,
         textAlign: 'center',
         fontSize: 35,
