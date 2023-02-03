@@ -5,23 +5,30 @@ import places from '../data/places'
 
 
 const PlacesScreen = ({ navigation }) => {
-   
-    
 
-    const renderPlaces = ({item}) => (
-        
-        <PlacesItems item={item}  />
+    const handleSelectedPlace = item => {
+        navigation.navigate("Details", {
+            name: item.name
+        })
+    }
+
+    const renderPlaces = ({ item }) => (
+        <View style={styles.placesContainer}>
+            <PlacesItems item={item} onSelected={handleSelectedPlace} />
+        </View>
+
     )
 
     return (
         <View style={styles.container}>
-            <View style={styles.placesContainer}>
-                <FlatList
+
+            <FlatList
                 data={places}
                 renderItem={renderPlaces}
-                keyExtractor={item => item.id}/>
-                <PlacesItems />
-            </View>
+                keyExtractor={(item) => item.id}
+                numColumns={2} />
+
+
             <Button title="go" onPress={() => navigation.navigate("Home")} />
         </View>
     )
@@ -35,8 +42,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    placesContainer:{
-        widht:150,
+    placesContainer: {
+        widht: 150,
         height: 150
     }
 })

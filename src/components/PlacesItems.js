@@ -1,23 +1,19 @@
-import { StyleSheet, Text, View, Image} from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
-import { useEffect } from 'react'
+
 
 const PlacesItems = ({item, onSelected}) => {
-  useEffect(() => {
-    console.log({item})
-  }, [])
-
-
+ 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={()=> onSelected(item)}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{uri:"https://www.entornoturistico.com/wp-content/uploads/2020/09/agencia-de-viajes-1280x720.jpg" }} />
       </View>
       <View style={styles.cityContainer}>
-        <Text>city</Text>
-        <Text>country</Text>
+        <Text>{item.city}</Text>
+        <Text>{item.country}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -27,6 +23,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderRadius: 10,
+    padding:20,
   },
   imageContainer: {
     height: '60%',
