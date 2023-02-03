@@ -1,4 +1,4 @@
-export const places = [
+const places = [
     {
         id: "1",
         city: 'A Coruña',
@@ -51,3 +51,4 @@ export const places = [
     
 
 ]
+export default places;

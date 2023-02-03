@@ -12,9 +12,9 @@ export default Header
 
 const styles = StyleSheet.create({
     title: {
-        height: 65,
+        marginTop:20,
         textAlign: 'center',
-        fontSize: 35,
+        fontSize: 30,
         fontFamily: 'OswaldRegular',
         marginBottom: 50,
     
