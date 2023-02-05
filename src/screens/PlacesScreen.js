@@ -4,11 +4,19 @@ import PlacesItems from '../components/PlacesItems'
 import places from '../data/places'
 
 
-const PlacesScreen = ({ navigation }) => {
+const PlacesScreen = ({ navigation, route }) => {
+
+
+    const newPlaces = places.filter(
+        place => place.categories === route.params.id)
 
     const handleSelectedPlace = item => {
         navigation.navigate("Details", {
-            name: item.name
+            description: item.description,
+            city: item.city,
+            country:item.country,
+            hotels: item.hotels,
+            img: item.img
         })
     }
 
@@ -23,13 +31,10 @@ const PlacesScreen = ({ navigation }) => {
         <View style={styles.container}>
 
             <FlatList
-                data={places}
+                data={newPlaces}
                 renderItem={renderPlaces}
                 keyExtractor={(item) => item.id}
-                numColumns={2} />
-
-
-            <Button title="go" onPress={() => navigation.navigate("Home")} />
+                numColumns={1} />
         </View>
     )
 }

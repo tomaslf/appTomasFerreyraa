@@ -6,6 +6,7 @@ const places = [
         categories: '2',
         description: ' Coruña is the most populated city in Galicia, Spain and the second most populated municipality in the autonomous community and seventeenth overall in the country',
         hotels: 'https://bit.ly/3jrDbrS',
+        img: "https://interrailero.com/wp-content/uploads/2021/08/que-ver-en-la-provincia-de-coruna.jpg"
     },
     {
         id: "2",

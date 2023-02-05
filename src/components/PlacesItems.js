@@ -3,11 +3,12 @@ import React from 'react'
 
 
 const PlacesItems = ({item, onSelected}) => {
- 
+
+
   return (
     <TouchableOpacity style={styles.container} onPress={()=> onSelected(item)}>
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{uri:"https://www.entornoturistico.com/wp-content/uploads/2020/09/agencia-de-viajes-1280x720.jpg" }} />
+        <Image style={styles.image} source={{uri:item.img }} />
       </View>
       <View style={styles.cityContainer}>
         <Text>{item.city}</Text>
@@ -24,13 +25,16 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     padding:20,
+    backgroundColor: 'red',
+    width: 200,
+    marginTop:10
   },
   imageContainer: {
-    height: '60%',
-    width:150
+    height: '70%',
+
   },
   cityContainer: {
-    height: '40%'
+    height: '30%',
   },
   image:{
     width:'100%',

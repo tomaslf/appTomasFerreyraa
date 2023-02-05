@@ -1,19 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Button,Image } from 'react-native'
 import React from 'react'
 import { useEffect } from 'react'
 
-const PlacesDetailScreen = ({navigation, route}) => {
 
-    useEffect(() => {
-        console.log(route.params)
-      }, [])
+const PlacesDetailScreen = ({route}) => {
+
   return (
-    <View>
-      <Text>PlacesDetailScreen</Text>
+    <View style={styles.container}>
+      <Image style={styles.image} source={{uri:route.params.img }} />
+      <Button title='Hotel'  />
     </View>
   )
 }
 
 export default PlacesDetailScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+  },
+  image:{
+    width:'100%',
+    height:'30%'
+  }
+})
