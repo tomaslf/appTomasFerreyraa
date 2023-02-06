@@ -1,13 +1,32 @@
-import { StyleSheet, Text, View, Button,Image } from 'react-native'
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import colors from '../constants/colors'
+import Ionicons from '@expo/vector-icons/Ionicons'
 
-
-const PlacesDetailScreen = ({route}) => {
+const PlacesDetailScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={{uri:route.params.img }} />
-      <Button title='Hotel'  />
+      <Image style={styles.image} source={{ uri: route.params.img }} />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.icons}>
+          <Ionicons name="airplane" size={30} color='black' />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.icons}>
+          <Ionicons name="map" size={30} color='black' />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.icons}>
+          <Ionicons name="restaurant" size={30} color='black' />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.icons}>
+          <Ionicons name="bed" size={30} color='black' />
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.cityText}>{route.params.city},{route.params.country}</Text>
+      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,marginTop:5 }} />
+      <Text style={styles.description}>{route.params.description}</Text>
+
+
     </View>
   )
 }
@@ -15,11 +34,46 @@ const PlacesDetailScreen = ({route}) => {
 export default PlacesDetailScreen
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
+  container: {
+    flex: 1,
+    padding: 15,
+    backgroundColor:colors.backgroundColor
   },
-  image:{
-    width:'100%',
-    height:'30%'
+  image: {
+    width: '100%',
+    height: '55%',
+    borderRadius: 30,
+    marginBottom: 10,
+  },
+  buttonContainer: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+  }
+  ,
+  icons: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    width: 70,
+    backgroundColor: colors.headerColor,
+    borderRadius: 70,
+    shadowColor: 'black',
+    shadowRadius: 15,
+    shadowOpacity: 0.5,
+    shadowOffset: { height: 2, width: 0 },
+    elevation: 6,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  cityText:{
+    marginTop:10,
+    marginLeft: 3,
+    fontFamily:'OswaldRegular',
+    fontSize:30,
+  },
+  description:{
+    fontFamily:'OswaldRegular',
+    fontStyle:'italic',
+    textAlign:'justify'
   }
 })

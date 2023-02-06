@@ -2,6 +2,7 @@ import { Button, FlatList, StyleSheet, View } from 'react-native'
 import React from 'react'
 import PlacesItems from '../components/PlacesItems'
 import places from '../data/places'
+import colors from '../constants/colors'
 
 
 const PlacesScreen = ({ navigation, route }) => {
@@ -34,7 +35,7 @@ const PlacesScreen = ({ navigation, route }) => {
                 data={newPlaces}
                 renderItem={renderPlaces}
                 keyExtractor={(item) => item.id}
-                numColumns={1} />
+                numColumns={2} />
         </View>
     )
 }
@@ -45,10 +46,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: colors.backgroundColor
+        
+       
     },
     placesContainer: {
-        widht: 150,
-        height: 150
+        padding: 5,
+        height: 200,
+        width:190,
     }
 })

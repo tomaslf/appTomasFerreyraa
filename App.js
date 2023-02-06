@@ -13,7 +13,7 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer  >
+    <NavigationContainer >
       <BottomTabNavigator/>
     </NavigationContainer>
 

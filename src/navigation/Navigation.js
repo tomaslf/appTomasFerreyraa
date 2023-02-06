@@ -14,7 +14,7 @@ const Navigation = () => {
 
     return (
         <Stack.Navigator initialRouteName='Home' screenOptions={{
-            headerStyle: { backgroundColor: colors.backgroundColor }
+            headerStyle: { backgroundColor: colors.headerColor }
         }
         } >
             <Stack.Screen name="Home" component={Home} options={{ title: "Travel" }} />

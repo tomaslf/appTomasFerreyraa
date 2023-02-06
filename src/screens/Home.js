@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import colors from '../constants/colors';
 
 
-const Home = ({ navigation}) => {
+const Home = ({ navigation }) => {
 
 
 
@@ -28,21 +28,25 @@ export default Home
 
 const styles = StyleSheet.create({
     container: {
+        marginTop:100,
         alignSelf: 'center',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.backgroundColor,
-        borderRadius: 10,
+        backgroundColor: colors.headerColor,
+        borderRadius: 15,
         padding: 15,
+        borderRadius: 15,
+        shadowColor: 'black',
+        shadowRadius: 15,
+        shadowOpacity: 0.5,
+        shadowOffset: { height: 2, width: 0 },
+        elevation: 6,
 
     },
     image: {
         flex: 1,
         paddingTop: 60
-    },
-    buttonContainer: {
-
     },
     text: {
         justifyContent: 'center',
@@ -51,9 +55,9 @@ const styles = StyleSheet.create({
         fontFamily: 'OswaldRegular'
 
     },
-    header:{
-        fontSize:45,
-        fontStyle:'italic'   
+    header: {
+        fontSize: 45,
+        fontStyle: 'italic'
     }
 
 })

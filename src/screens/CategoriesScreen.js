@@ -3,6 +3,7 @@ import React from 'react'
 import CategoriesPlaces from '../components/CategoriesPlaces'
 import categories from '../data/categories'
 import Header from '../components/Header'
+import colors from '../constants/colors'
 
 
 const CategoriesScreen = ({ navigation }) => {
@@ -22,11 +23,12 @@ const CategoriesScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Header title={"Choose your type of trip"} />
+            <Header title={"Where do you want to go?"} />
             <FlatList
                 data={categories}
                 renderItem={renderCategories}
-                keyExtractor={item => item.id} />
+                keyExtractor={item => item.id}
+                numColumns={1} />
         </View >
 
     )
@@ -38,10 +40,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: colors.backgroundColor
+        
+        
+        
     },
     categoriesContainer: {
-        padding: 15,
-        height: 150
+        padding: 10,
+        height: 250,
+        width:250,
     }
 })
