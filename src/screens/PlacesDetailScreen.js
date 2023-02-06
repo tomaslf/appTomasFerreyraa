@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Button,Image } from 'react-native'
 import React from 'react'
-import { useEffect } from 'react'
 
 
 const PlacesDetailScreen = ({route}) => {
