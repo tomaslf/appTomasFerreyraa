@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
-import colors from '../constants/colors'
+import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 const PlacesDetailScreen = ({ route }) => {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
-    backgroundColor:colors.backgroundColor
+    backgroundColor:colorss.backgroundColor
   },
   image: {
     width: '100%',
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 60,
     width: 70,
-    backgroundColor: colors.headerColor,
+    backgroundColor: colorss.headerColor,
     borderRadius: 70,
     shadowColor: 'black',
     shadowRadius: 15,

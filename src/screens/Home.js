@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, ImageBackground, View, Button, KeyboardAvoidingView, ScrollView, TouchableOpacity, Text } from 'react-native';
 import Header from '../components/Header'
-import colors from '../constants/colors';
+import colorss from '../constants/colorss';
 
 
 const Home = ({ navigation }) => {
@@ -10,7 +10,7 @@ const Home = ({ navigation }) => {
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-            <ImageBackground source={{ uri: "https://www.entornoturistico.com/wp-content/uploads/2020/09/agencia-de-viajes-1280x720.jpg" }} resizeMode="cover" style={styles.image}>
+            <ImageBackground source={{ uri: "https://www.intermundial.es/blog/wp-content/uploads/2019/10/Con-que-pasaporte-viajo-si-tengo-doble-nacionalidad.jpg" }} resizeMode="cover" style={styles.image}>
                 <ScrollView>
                     <Header newStyles={styles.header} title={"Explore the world"} />
                     <View style={styles.container}>
@@ -18,6 +18,7 @@ const Home = ({ navigation }) => {
                             <Text style={styles.text} >START TRAVEL</Text>
                         </TouchableOpacity>
                     </View>
+                    
                 </ScrollView>
             </ImageBackground>
         </KeyboardAvoidingView>
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.headerColor,
+        backgroundColor: colorss.headerColor,
         borderRadius: 15,
         padding: 15,
         borderRadius: 15,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 45,
-        fontStyle: 'italic'
+        fontStyle: 'bolder'
     }
 
 })

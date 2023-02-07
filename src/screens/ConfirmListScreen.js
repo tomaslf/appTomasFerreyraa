@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, ImageBackground, Button } from 'react-native'
 import Header from '../components/Header'
 import List from '../components/List'
-import colors from '../constants/colors'
+import colorss from '../constants/colorss'
 
 
 const ConfirmListScreen = ({ list, setList, navigation }) => {
@@ -14,7 +14,7 @@ const ConfirmListScreen = ({ list, setList, navigation }) => {
         <Header title={'Go Shop'} />
         <List list={list} setList={setList} />
         <View style={styles.buttonGroup}>
-          <Button title='Go Back' color={colors.deleteColor} onPress={() => navigation.navigate('Home')} />
+          <Button title='Go Back' color={colorss.deleteColor} onPress={() => navigation.navigate('Home')} />
         </View>
       </ImageBackground>
     </>

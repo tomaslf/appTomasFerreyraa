@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, TextInput, Button } from 'react-native'
-import colors from '../constants/colors';
+import colorss from '../constants/colorss';
 
 const AddItem = ({ OnAddItem, handleText, textValue }) => {
 

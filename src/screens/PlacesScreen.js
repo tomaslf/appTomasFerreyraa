@@ -1,8 +1,8 @@
-import { Button, FlatList, StyleSheet, View } from 'react-native'
+import { Button, FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
 import PlacesItems from '../components/PlacesItems'
 import places from '../data/places'
-import colors from '../constants/colors'
+import colorss from '../constants/colorss'
 
 
 const PlacesScreen = ({ navigation, route }) => {
@@ -15,7 +15,7 @@ const PlacesScreen = ({ navigation, route }) => {
         navigation.navigate("Details", {
             description: item.description,
             city: item.city,
-            country:item.country,
+            country: item.country,
             hotels: item.hotels,
             img: item.img
         })
@@ -29,14 +29,18 @@ const PlacesScreen = ({ navigation, route }) => {
     )
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView style={{ flex: 1 }}>
+            <ScrollView>
+                <View style={styles.container}>
+                    <FlatList
+                        data={newPlaces}
+                        renderItem={renderPlaces}
+                        keyExtractor={(item) => item.id}
+                        numColumns={2} />
+                </View>
+            </ScrollView>
+        </KeyboardAvoidingView>
 
-            <FlatList
-                data={newPlaces}
-                renderItem={renderPlaces}
-                keyExtractor={(item) => item.id}
-                numColumns={2} />
-        </View>
     )
 }
 
@@ -47,13 +51,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.backgroundColor
-        
-       
+        backgroundColor: colorss.backgroundColor
+
+
     },
     placesContainer: {
         padding: 5,
         height: 200,
-        width:190,
+        width: 190,
     }
 })

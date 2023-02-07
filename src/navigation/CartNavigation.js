@@ -1,6 +1,6 @@
 import React from 'react'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import colors from '../constants/colors';
+import colorss from '../constants/colorss';
 import CartScreen from '../screens/CartScreen';
 
 
@@ -10,7 +10,7 @@ const CartNavigation = () => {
 
     return (
         <Stack.Navigator initialRouteName='Home' screenOptions={{
-            headerStyle: { backgroundColor: colors.backgroundColor }
+            headerStyle: { backgroundColor: colorss.backgroundColor }
         }
         } >
             <Stack.Screen name="Cart" component={CartScreen}/>

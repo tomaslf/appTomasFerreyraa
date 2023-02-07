@@ -1,6 +1,6 @@
 import React from 'react'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import colors from '../constants/colors';
+import colorss from '../constants/colorss';
 import Home from '../screens/Home';
 import ConfirmListScreen from "../screens/ConfirmListScreen";
 import CategoriesScreen from '../screens/CategoriesScreen';
@@ -14,7 +14,7 @@ const Navigation = () => {
 
     return (
         <Stack.Navigator initialRouteName='Home' screenOptions={{
-            headerStyle: { backgroundColor: colors.headerColor }
+            headerStyle: { backgroundColor: colorss.headerColor }
         }
         } >
             <Stack.Screen name="Home" component={Home} options={{ title: "Travel" }} />

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Button } from 'react-native'
 import Modal from './Modal';
-import colors from '../constants/colors';
+import colorss from '../constants/colorss';
 
 
 
@@ -27,7 +27,7 @@ const List = ({list, setList}) => {
                 {item}
             </Text>
             <View style={styles.buttonGroup}>
-                <Button title='Edit' color={colors.disableColor} onPress={() => handleModal(item)}></Button>
+                <Button title='Edit' color={colorss.disableColor} onPress={() => handleModal(item)}></Button>
             </View>
             <Modal removeItemFunction={() => removeItem(itemSelected)} closeModal={() => setModalVisible(false)} modalVisibleFunction={modalVisible} itemSelected={itemSelected} />
 

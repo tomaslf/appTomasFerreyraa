@@ -53,8 +53,78 @@ const places = [
         hotels: 'http://bit.ly/3JxsezC',
         img: "https://estaticos-cdn.elperiodico.com/clip/80ccbd4a-9d52-4b2a-b2b3-e9c254b3447c_alta-libre-aspect-ratio_default_0.jpg"
     },
-    
-    
+    {
+        id: "7",
+        city: 'Rome',
+        country: "Italy",
+        categories: '3',
+        description: "Is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale. With 2,860,009 residents in 1,285 km2 (496.1 sq mi), Rome is the country's most populated comune and the third most populous city in the European Union by population within city limits. ",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://res.klook.com/image/upload/Mobile/City/afmqgg5h0jl9wnr1dfmf.jpg"
+    },
+    {
+        id: "8",
+        city: 'Salta',
+        country: "Argentina",
+        categories: '1',
+        description: "Is the capital and largest city in the Argentine province of the same name. With a population of 618,375 according to the 2010 census, it is also the 7th most-populous city in Argentina. The city serves as the cultural and economic center of the Valle de Lerma Metropolitan Area (Spanish: Área Metropolitana del Valle de Lerma, AMVL), which is home to over 50.9% of the population of Salta Province and also includes the municipalities of La Caldera, Vaqueros, Campo Quijano, Rosario de Lerma, Cerrillos, La Merced and San Lorenzo.",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://media.tacdn.com/media/attractions-content--1x-1/0b/2c/ef/d8.jpg"
+    },
+    {
+        id: "9",
+        city: 'El Chalten',
+        country: "Argentina",
+        categories: '1',
+        description: "Is a small mountain village in Santa Cruz Province, Argentina. It is located on the riverside of Rio de las Vueltas, within the Los Glaciares National Park (section Reserva Nacional Zona Viedma) near the base of Cerro Torre and Cerro Fitz Roy spires, both popular for climbing. It is 220 km north of El Calafate. It is also a popular base for hiking numerous trails, such as those to the base of surrounding peaks and glacial lakes, such as Laguna Torre and Laguna de los Tres (near the base of Fitz Roy).",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://img3.oastatic.com/img2/56877554/max/laguna-de-los-tres.jpg"
+    },
+    {
+        id: "10",
+        city: 'Machu Picchu',
+        country: "Peru",
+        categories: '1',
+        description: "Is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a 2,430-meter (7,970 ft) mountain ridge.Often referred to as the 'Lost City of the Incas', it is the most familiar icon of the Inca Empire. It is located in the Machupicchu District within Urubamba Province[4] above the Sacred Valley, which is 80 kilometers (50 mi) northwest of Cusco. The Urubamba River flows past it, cutting through the Cordillera and creating a canyon with a tropical mountain climate",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg"
+    },
+    {
+        id: "11",
+        city: 'Varadero',
+        country: "Cuba",
+        categories: '2',
+        description: "Also referred to as Playa Azul (Blue Beach), is a resort town in the province of Matanzas, Cuba, and one of the largest resort areas in the Caribbean. Varadero Beach is rated one of the world's best beaches in TripAdvisor's Traveler's Choice Awards since 2019, ranking at number two.[3] Common activities include fishing and excursions to Matanzas, Cárdenas, and the Península de Zapata.",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://content.r9cdn.net/rimg/dimg/76/09/5da6a15f-lm-159315-1736a4bb293.jpg?width=688&height=350&xhint=1850&yhint=1532&crop=true"
+    },
+    {
+        id: "12",
+        city: 'HolBox Island',
+        country: "Mexico",
+        categories: '2',
+        description: "Is an island in the Mexican state of Quintana Roo, located on the north coast of the Yucatán Peninsula. It is approximately 41.84 kilometres (26.00 miles) long and 1.5 kilometres (0.9 miles) wide, and it is separated from the mainland by 10 km of shallow lagoon that is home to flamingos, pelicans and other rich birdlife. Holbox Island is part of the Municipality of Lázaro Cárdenas and also part of the Yum Balam Biosphere Reserve.",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://www.barcelo.com/guia-turismo/wp-content/uploads/2021/02/holbox-isla-pasion-888.jpg"
+    },
+    {
+        id: "13",
+        city: 'New York',
+        country: "EE.UU",
+        categories: '3',
+        description: "Often called New York City[a] or NYC, is the most populous city in the United States. With a 2020 population of 8,804,190 distributed over 300.46 square miles (778.2 km2), New York City is the most densely populated major city in the United States and more than twice as populous as Los Angeles, the nation's second largest city. New York City is located at the southern tip of New York State.",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://mindfultravelbysara.com/wp-content/uploads/2015/05/nueva-york-imprescindibl.jpg"
+    },
+    {
+        id: "14",
+        city: 'London',
+        country: "England",
+        categories: '3',
+        description: "Is the capital and largest city of England and the United Kingdom, with a population of just under 9 million.It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia.The City of London, its ancient core and financial centre, was founded by the Romans as Londinium and retains its medieval boundaries.",
+        hotels: 'http://bit.ly/3JxsezC',
+        img: "https://uceap.universityofcalifornia.edu/sites/default/files/2019-04/english-universities-m2.jpg"
+    },
 
 ]
 export default places;
