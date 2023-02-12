@@ -14,6 +14,7 @@ const PlacesItems = ({item, onSelected}) => {
         <Text>{item.city}</Text>
         <Text>{item.country}</Text>
       </View>
+      
     </TouchableOpacity>
   )
 }

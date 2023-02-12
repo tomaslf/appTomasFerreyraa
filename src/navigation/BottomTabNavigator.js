@@ -6,6 +6,7 @@ import {StyleSheet, View } from "react-native";
 import colorss from "../constants/colorss";
 
 
+
 const BottomTabs = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -18,14 +19,14 @@ const BottomTabNavigator = () => {
             <BottomTabs.Screen  name="Travel"  component={Navigation} options={{
                 tabBarIcon: () => (
                     <View >
-                        <Ionicons  name="airplane" size={20} color='black' />
+                        <Ionicons  name="airplane" size={25} color='black' />
                     </View>
                 ),
             }} />
             <BottomTabs.Screen name="Carrito" component={CartNavigation} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Ionicons name="cart" size={20} color='black' />
+                        <Ionicons name="cart" size={25} color='black' />
                     </View>
                 ),
             }} />

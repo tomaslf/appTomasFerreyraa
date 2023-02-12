@@ -1,9 +1,15 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
 
-const PlacesDetailScreen = ({ route }) => {
+const PlacesDetailScreen = ({ route, navigation }) => {
+
+  const handleHotel = () => {
+    navigation.navigate("Hotel", {
+        hotels: route.params.hotels,
+    })
+}
 
   return (
     <View style={styles.container}>
@@ -18,12 +24,14 @@ const PlacesDetailScreen = ({ route }) => {
         <TouchableOpacity style={styles.icons}>
           <Ionicons name="restaurant" size={30} color='black' />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.icons}>
+        <TouchableOpacity style={styles.icons} onPress={handleHotel} >
           <Ionicons name="bed" size={30} color='black' />
         </TouchableOpacity>
+
       </View>
+
       <Text style={styles.cityText}>{route.params.city},{route.params.country}</Text>
-      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1,marginTop:5 }} />
+      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 5 }} />
       <Text style={styles.description}>{route.params.description}</Text>
 
 
@@ -37,7 +45,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
-    backgroundColor:colorss.backgroundColor
+    backgroundColor: colorss.backgroundColor
   },
   image: {
     width: '100%',
@@ -65,15 +73,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  cityText:{
-    marginTop:10,
+  cityText: {
+    marginTop: 10,
     marginLeft: 3,
-    fontFamily:'OswaldRegular',
-    fontSize:30,
+    fontFamily: 'OswaldRegular',
+    fontSize: 30,
   },
-  description:{
-    fontFamily:'OswaldRegular',
-    fontStyle:'italic',
-    textAlign:'justify'
+  description: {
+    fontFamily: 'OswaldRegular',
+    fontStyle: 'italic',
+    textAlign: 'justify'
   }
 })
