@@ -1,15 +1,29 @@
 import React from 'react'
-import { StyleSheet, ImageBackground, View, Button, KeyboardAvoidingView, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, ImageBackground, View, KeyboardAvoidingView, ScrollView, TouchableOpacity, Text } from 'react-native';
 import Header from '../components/Header'
 import colorss from '../constants/colorss';
-
+import { useEffect, useState } from 'react';
+import LottieView from "lottie-react-native";
 
 const Home = ({ navigation }) => {
 
 
+    const [loader, setLoader] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false);
+        }, 5000)
+    })
+
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
+            {(loader) ?
+            <LottieView 
+            source={require("../assets/images/19080-travel-the-world")}
+            style={styles.animation}
+            autoPlay
+          /> :
             <ImageBackground source={{ uri: "https://www.intermundial.es/blog/wp-content/uploads/2019/10/Con-que-pasaporte-viajo-si-tengo-doble-nacionalidad.jpg" }} resizeMode="cover" style={styles.image}>
                 <ScrollView>
                     <Header newStyles={styles.header} title={"Explore the world"} />
@@ -18,9 +32,10 @@ const Home = ({ navigation }) => {
                             <Text style={styles.text} >START TRAVEL</Text>
                         </TouchableOpacity>
                     </View>
-                    
+
                 </ScrollView>
-            </ImageBackground>
+            </ImageBackground> }
+
         </KeyboardAvoidingView>
     )
 }
@@ -28,8 +43,12 @@ const Home = ({ navigation }) => {
 export default Home
 
 const styles = StyleSheet.create({
+    animation:{
+        backgroundColor:colorss.backgroundColor,
+        flex:1,
+    },
     container: {
-        marginTop:100,
+        marginTop: 100,
         alignSelf: 'center',
         flex: 1,
         justifyContent: 'center',

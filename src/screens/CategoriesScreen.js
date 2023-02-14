@@ -1,12 +1,13 @@
 import { StyleSheet, View, FlatList, KeyboardAvoidingView, ScrollView } from 'react-native'
 import React from 'react'
 import CategoriesPlaces from '../components/CategoriesPlaces'
-import categories from '../data/categories'
 import Header from '../components/Header'
 import colorss from '../constants/colorss'
-
+import { useSelector } from 'react-redux'
 
 const CategoriesScreen = ({ navigation }) => {
+
+    const categories = useSelector(state => state.categories.categories)
 
     const handleSelectedCategory = item => {
         navigation.navigate("Places", {

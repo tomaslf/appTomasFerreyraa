@@ -1,15 +1,17 @@
 import { Button, FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
 import PlacesItems from '../components/PlacesItems'
-import places from '../data/places'
 import colorss from '../constants/colorss'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 const PlacesScreen = ({ navigation, route }) => {
+    const dispatch = useDispatch();
+    const categoryPlaces = useSelector(state => state.places.filteredPlaces);
+    const category = useSelector(state => state.categories.selected);
 
-
-    const newPlaces = places.filter(
-        place => place.categories === route.params.id)
+    // const newPlaces = places.filter(
+    //     place => place.categories === route.params.id)
 
     const handleSelectedPlace = item => {
         navigation.navigate("Details", {
@@ -33,7 +35,7 @@ const PlacesScreen = ({ navigation, route }) => {
             <ScrollView>
                 <View style={styles.container}>
                     <FlatList
-                        data={newPlaces}
+                        data={categoryPlaces}
                         renderItem={renderPlaces}
                         keyExtractor={(item) => item.id}
                         numColumns={2} />
