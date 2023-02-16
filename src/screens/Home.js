@@ -24,15 +24,15 @@ const Home = ({ navigation }) => {
             style={styles.animation}
             autoPlay
           /> :
-            <ImageBackground source={{ uri: "https://www.intermundial.es/blog/wp-content/uploads/2019/10/Con-que-pasaporte-viajo-si-tengo-doble-nacionalidad.jpg" }} resizeMode="cover" style={styles.image}>
+            <ImageBackground source={{ uri: "https://img.freepik.com/premium-photo/plane-passport-boarding-pass-travel_23-2148169920.jpg?w=2000" }} resizeMode="cover" style={styles.image}>
                 <ScrollView>
                     <Header newStyles={styles.header} title={"Explore the world"} />
+                    <Text style={styles.subHeader}>Everything you can imagine, is here</Text>
                     <View style={styles.container}>
                         <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
                             <Text style={styles.text} >START TRAVEL</Text>
                         </TouchableOpacity>
                     </View>
-
                 </ScrollView>
             </ImageBackground> }
 
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
         backgroundColor: colorss.headerColor,
         borderRadius: 15,
         padding: 15,
-        borderRadius: 15,
         shadowColor: 'black',
         shadowRadius: 15,
         shadowOpacity: 0.5,
@@ -77,7 +76,14 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 45,
-        fontStyle: 'bolder'
+        fontStyle: 'bolder',
+       
+    },
+    subHeader:{
+        textAlign:'center',
+        fontSize: 18,
+        fontFamily: 'OswaldRegular',
+        fontStyle:'italic'
     }
 
 })

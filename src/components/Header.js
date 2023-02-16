@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30,
         fontFamily: 'OswaldRegular',
-        marginBottom: 50,
     
       },
 })

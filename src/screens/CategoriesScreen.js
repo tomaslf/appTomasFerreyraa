@@ -3,15 +3,16 @@ import React from 'react'
 import CategoriesPlaces from '../components/CategoriesPlaces'
 import Header from '../components/Header'
 import colorss from '../constants/colorss'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import {selectedCategory} from '../store/actions/category.action'
 
 const CategoriesScreen = ({ navigation }) => {
-
+    const dispatch = useDispatch()
     const categories = useSelector(state => state.categories.categories)
 
     const handleSelectedCategory = item => {
+        dispatch(selectedCategory(item.id))
         navigation.navigate("Places", {
-            id: item.id,
             title: item.name
         })
     }

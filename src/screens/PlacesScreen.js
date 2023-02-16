@@ -1,19 +1,27 @@
-import { Button, FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView } from 'react-native'
+import {FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
+import { useEffect } from 'react'
 import PlacesItems from '../components/PlacesItems'
 import colorss from '../constants/colorss'
 import { useSelector, useDispatch } from 'react-redux'
+import { selectedPlace, filteredPlace } from '../store/actions/places.action'
 
 
-const PlacesScreen = ({ navigation, route }) => {
+const PlacesScreen = ({ navigation}) => {
+
     const dispatch = useDispatch();
     const categoryPlaces = useSelector(state => state.places.filteredPlaces);
     const category = useSelector(state => state.categories.selected);
 
-    // const newPlaces = places.filter(
-    //     place => place.categories === route.params.id)
+
+    useEffect(() => {
+    dispatch(filteredPlace(category.id))
+    }, [])
+    
+
 
     const handleSelectedPlace = item => {
+        dispatch(selectedPlace(item.id))
         navigation.navigate("Details", {
             description: item.description,
             city: item.city,
