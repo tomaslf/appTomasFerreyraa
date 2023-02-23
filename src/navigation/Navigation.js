@@ -15,10 +15,13 @@ const Navigation = () => {
 
     return (
         <Stack.Navigator initialRouteName='Home' screenOptions={{
-            headerStyle: { backgroundColor: colorss.headerColor }
+            headerStyle: { backgroundColor: colorss.headerColor },
         }
         } >
-            <Stack.Screen name="Home" component={Home} options={{ title: "Travel" }} />
+            <Stack.Screen name="Home" component={Home} options={{headerStyle: { backgroundColor: 'transparent' },
+            headerTransparent: true,
+            headerShown:false
+             }} />
             <Stack.Screen name="ConfirmList" component={ConfirmListScreen} />
             <Stack.Screen name="Details" component={PlacesDetailScreen} />
             <Stack.Screen name="Categories" component={CategoriesScreen} options={{ title: "Choose your type" }} />

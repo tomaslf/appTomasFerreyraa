@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import CartNavigation from "./CartNavigation";
 import Navigation from "./Navigation";
 import Ionicons from '@expo/vector-icons/Ionicons'
 import {StyleSheet, View } from "react-native";
 import colorss from "../constants/colorss";
+import WhishListNavigation from "./WhishListNavigation";
 
 
 
@@ -11,7 +11,7 @@ const BottomTabs = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
     return (
-        <BottomTabs.Navigator style={styles.bottomTab} initialRouteName="Travel" screenOptions={{
+        <BottomTabs.Navigator style={styles.bottomTab} initialRouteName="Home" screenOptions={{
             headerShown: false,
             tabBarShowLabel:false,
             tabBarStyle: styles.bottomTab
@@ -23,10 +23,10 @@ const BottomTabNavigator = () => {
                     </View>
                 ),
             }} />
-            <BottomTabs.Screen name="Carrito" component={CartNavigation} options={{
+            <BottomTabs.Screen name="WhishList" component={WhishListNavigation} options={{
                 tabBarIcon: () => (
                     <View>
-                        <Ionicons name="cart" size={25} color='black' />
+                        <Ionicons name="heart" size={25} color='black' />
                     </View>
                 ),
             }} />

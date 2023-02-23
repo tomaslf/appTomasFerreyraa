@@ -1,4 +1,4 @@
-import {FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView } from 'react-native'
+import {FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useEffect } from 'react'
 import PlacesItems from '../components/PlacesItems'
@@ -12,7 +12,6 @@ const PlacesScreen = ({ navigation}) => {
     const dispatch = useDispatch();
     const categoryPlaces = useSelector(state => state.places.filteredPlaces);
     const category = useSelector(state => state.categories.selected);
-
 
     useEffect(() => {
     dispatch(filteredPlace(category.id))
@@ -40,15 +39,13 @@ const PlacesScreen = ({ navigation}) => {
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-            <ScrollView>
-                <View style={styles.container}>
+           <View style={styles.container}>
                     <FlatList
                         data={categoryPlaces}
                         renderItem={renderPlaces}
                         keyExtractor={(item) => item.id}
                         numColumns={2} />
                 </View>
-            </ScrollView>
         </KeyboardAvoidingView>
 
     )

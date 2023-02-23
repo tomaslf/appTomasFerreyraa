@@ -1,28 +1,34 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
 import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { addWishList } from '../store/actions/wishList.action'
 
 const PlacesDetailScreen = ({ navigation }) => {
 
+  const dispatch = useDispatch()
   const detail = useSelector(state => state.places.selected)
 
+  const handleWishList = () => {
+    dispatch(addWishList(detail))
+  }
 
   const handleHotel = () => {
     navigation.navigate("Hotel", {
-        hotels: detail.hotels,
+      hotels: detail.hotels,
     })
-}
+  }
 
   return (
+
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: detail.img }} />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.icons}>
           <Ionicons name="airplane" size={30} color='black' />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.icons}>
+
+        <TouchableOpacity style={styles.icons} >
           <Ionicons name="map" size={30} color='black' />
         </TouchableOpacity>
         <TouchableOpacity style={styles.icons}>
@@ -31,15 +37,19 @@ const PlacesDetailScreen = ({ navigation }) => {
         <TouchableOpacity style={styles.icons} onPress={handleHotel} >
           <Ionicons name="bed" size={30} color='black' />
         </TouchableOpacity>
-
       </View>
-
-      <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
+      <View style={styles.cityContainer}>
+        <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
+        <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginTop: 10 }}>
+          <Ionicons name="heart" size={30} color='black' />
+        </TouchableOpacity>
+      </View>
       <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 5 }} />
-      <Text style={styles.description}>{detail.description}</Text>
-
-
+      <Text style={styles.description}>
+        {detail.description}
+      </Text>
     </View>
+
   )
 }
 
@@ -49,7 +59,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
-    backgroundColor: colorss.backgroundColor
+    backgroundColor: colorss.backgroundColor,
   },
   image: {
     width: '100%',
@@ -60,8 +70,11 @@ const styles = StyleSheet.create({
   buttonContainer: {
     justifyContent: 'space-around',
     flexDirection: 'row',
-  }
-  ,
+  },
+  toastify: {
+    backgroundColor: colorss.tabBarColor,
+    color: 'black'
+  },
   icons: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -77,6 +90,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  cityContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
   cityText: {
     marginTop: 10,
     marginLeft: 3,
@@ -87,5 +106,12 @@ const styles = StyleSheet.create({
     fontFamily: 'OswaldRegular',
     fontStyle: 'italic',
     textAlign: 'justify'
+  },
+  buttonStyle: {
+    marginTop: 10,
+    backgroundColor: "white",
+    borderColor: "green",
+    borderWidth: 2,
+    padding: 10
   }
 })

@@ -4,9 +4,13 @@ import Header from '../components/Header'
 import colorss from '../constants/colorss';
 import { useEffect, useState } from 'react';
 import LottieView from "lottie-react-native";
+import Ionicons from '@expo/vector-icons/Ionicons'
+
+
 
 const Home = ({ navigation }) => {
-
+ 
+    
 
     const [loader, setLoader] = useState(true);
     useEffect(() => {
@@ -19,22 +23,29 @@ const Home = ({ navigation }) => {
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
             {(loader) ?
-            <LottieView 
-            source={require("../assets/images/19080-travel-the-world")}
-            style={styles.animation}
-            autoPlay
-          /> :
-            <ImageBackground source={{ uri: "https://img.freepik.com/premium-photo/plane-passport-boarding-pass-travel_23-2148169920.jpg?w=2000" }} resizeMode="cover" style={styles.image}>
-                <ScrollView>
-                    <Header newStyles={styles.header} title={"Explore the world"} />
-                    <Text style={styles.subHeader}>Everything you can imagine, is here</Text>
-                    <View style={styles.container}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-                            <Text style={styles.text} >START TRAVEL</Text>
-                        </TouchableOpacity>
-                    </View>
-                </ScrollView>
-            </ImageBackground> }
+                <LottieView
+                    source={require("../assets/images/19080-travel-the-world")}
+                    style={styles.animation}
+                    autoPlay
+                /> :
+                <ImageBackground source={{ uri: "https://img.freepik.com/premium-photo/plane-passport-boarding-pass-travel_23-2148169920.jpg?w=2000" }} resizeMode="cover" style={styles.image}>
+                    <ScrollView>
+                        <View style={styles.container}>
+                            <View>
+                                <Header newStyles={styles.header} title={"Explore the world"} />
+                                <Text style={styles.subHeader}>Everything you can imagine, is here</Text>
+                            </View>
+                            <View style={styles.buttonContainer} >
+                                <View style={styles.buttonTravel} >
+                                    <Text style={styles.text} >Discover</Text>
+                                    <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
+                                        <Ionicons style={styles.icon} name="arrow-forward-outline" size={30} color='black' />
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                        </View>
+                    </ScrollView>
+                </ImageBackground>}
 
         </KeyboardAvoidingView>
     )
@@ -43,17 +54,27 @@ const Home = ({ navigation }) => {
 export default Home
 
 const styles = StyleSheet.create({
-    animation:{
-        backgroundColor:colorss.backgroundColor,
-        flex:1,
-    },
     container: {
-        marginTop: 100,
-        alignSelf: 'center',
         flex: 1,
+    },
+    animation: {
+        backgroundColor: colorss.backgroundColor,
+        flex: 1,
+    },
+    buttonContainer: {
+        marginTop: 250,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: colorss.headerColor,
+        alignContent: 'center',
+        paddingLeft: 15,
+        paddingRight: 15,
+
+
+    },
+    buttonTravel: {
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-around',
+        backgroundColor:colorss.headerColor,
         borderRadius: 15,
         padding: 15,
         shadowColor: 'black',
@@ -63,13 +84,17 @@ const styles = StyleSheet.create({
         elevation: 6,
 
     },
+    icon:{
+        backgroundColor:colorss.tabBarColor,
+        padding:10,
+        borderRadius:15,
+        
+    },
     image: {
         flex: 1,
         paddingTop: 60
     },
     text: {
-        justifyContent: 'center',
-        alignItems: 'center',
         fontSize: 35,
         fontFamily: 'OswaldRegular'
 
@@ -77,13 +102,14 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 45,
         fontStyle: 'bolder',
-       
+        marginTop:25,
+
     },
-    subHeader:{
-        textAlign:'center',
+    subHeader: {
+        textAlign: 'center',
         fontSize: 18,
         fontFamily: 'OswaldRegular',
-        fontStyle:'italic'
+        fontStyle: 'italic'
     }
 
 })

@@ -25,17 +25,18 @@ const CategoriesScreen = ({ navigation }) => {
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-            <ScrollView>
+          
                 <View style={styles.container}>
                     <Header title={"Where do you want to go?"} />
                     <FlatList
+                        
+                        showsVerticalScrollIndicator={false}
                         data={categories}
                         renderItem={renderCategories}
                         keyExtractor={item => item.id}
-                        numColumns={1} />
+                        />
                 </View >
 
-            </ScrollView>
 
         </KeyboardAvoidingView>
 
