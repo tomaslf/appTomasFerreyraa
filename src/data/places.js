@@ -15,7 +15,10 @@ const places = [
         categories: '3',
         description: 'Is the capital and most populous city of Spain. The city has almost 3.4 million inhabitants and a metropolitan area population of approximately 6.7 million. It is the second-largest city in the European Union (EU), and its monocentric metropolitan area is the second-largest in the EU',
         hotels: 'https://bit.ly/3WZE1K9',
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/44/Plaza_Mayor_de_Madrid_06.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/4/44/Plaza_Mayor_de_Madrid_06.jpg",
+        img2: "https://www.spain.info/export/sites/segtur/.content/imagenes/reportajes/madrid/vistas-madrid-gran-via-c-alev-takil-u-x2Or94kjaqo.jpg",
+        img3: "https://estaticos.esmadrid.com/cdn/farfuture/cWEgd6nsFZn5_x7RaedKMR9rkPA7ZC3zVuc90k6gXwA/mtime:1646729215/sites/default/files/styles/content_type_full/public/editorial/estaciones.jpg?itok=8J6mUZg3"
+
     },
     {
         id: "3",

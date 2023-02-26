@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     categoriesContainer: {
         padding: 10,
         height: 250,
-        width: 250,
+        width: 300,
     }
 })

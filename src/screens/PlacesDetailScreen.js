@@ -1,16 +1,21 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, StatusBar } from 'react-native'
 import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { useSelector, useDispatch } from 'react-redux'
 import { addWishList } from '../store/actions/wishList.action'
+import { useState } from 'react'
+
 
 const PlacesDetailScreen = ({ navigation }) => {
 
   const dispatch = useDispatch()
   const detail = useSelector(state => state.places.selected)
+  const [like, setLike] = useState(<Ionicons name="heart-outline" size={30} color='black' />)
 
   const handleWishList = () => {
     dispatch(addWishList(detail))
+    setLike(<Ionicons name="heart" size={30} color='black' />)
+    
   }
 
   const handleHotel = () => {
@@ -18,6 +23,8 @@ const PlacesDetailScreen = ({ navigation }) => {
       hotels: detail.hotels,
     })
   }
+  
+
 
   return (
 
@@ -41,7 +48,7 @@ const PlacesDetailScreen = ({ navigation }) => {
       <View style={styles.cityContainer}>
         <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
         <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginTop: 10 }}>
-          <Ionicons name="heart" size={30} color='black' />
+          {like}
         </TouchableOpacity>
       </View>
       <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 5 }} />
@@ -56,6 +63,11 @@ const PlacesDetailScreen = ({ navigation }) => {
 export default PlacesDetailScreen
 
 const styles = StyleSheet.create({
+  imgContainer: {
+    height: 400,
+    backgroundColor: 'red',
+    width: 200
+  },
   container: {
     flex: 1,
     padding: 15,
@@ -66,6 +78,7 @@ const styles = StyleSheet.create({
     height: '55%',
     borderRadius: 30,
     marginBottom: 10,
+
   },
   buttonContainer: {
     justifyContent: 'space-around',

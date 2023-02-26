@@ -7,6 +7,7 @@ import WishList from '../components/WhishList'
 import { selectedPlace } from '../store/actions/places.action'
 import { emptyWishList } from '../store/actions/wishList.action'
 import Ionicons from '@expo/vector-icons/Ionicons'
+import LottieView from "lottie-react-native";
 
 const WhishListScreen = ({ navigation }) => {
 
@@ -25,7 +26,7 @@ const WhishListScreen = ({ navigation }) => {
       img: item.img
     })
   }
-  
+
   const handleDislike = () => {
     dispatch(emptyWishList(detail))
   }
@@ -40,7 +41,11 @@ const WhishListScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {(items.length === 0) ? <Text>empty</Text> : <><FlatList
+      {(items.length === 0) ? <LottieView
+        source={require("../assets/images/123724-wishlist-empty.json")}
+        style={styles.animation}
+        autoPlay
+      /> : <><FlatList
         data={items}
         renderItem={renderWishList}
         keyExtractor={item => item.id}
@@ -57,6 +62,10 @@ const WhishListScreen = ({ navigation }) => {
 export default WhishListScreen
 
 const styles = StyleSheet.create({
+  animation: {
+    backgroundColor: colorss.backgroundColor,
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
