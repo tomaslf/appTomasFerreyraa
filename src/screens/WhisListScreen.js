@@ -64,7 +64,7 @@ export default WhishListScreen
 const styles = StyleSheet.create({
   animation: {
     backgroundColor: colorss.backgroundColor,
-    flex: 1,
+    marginLeft:20
   },
   container: {
     flex: 1,

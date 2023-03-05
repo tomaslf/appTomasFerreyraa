@@ -2,8 +2,6 @@ import React from 'react'
 import { StyleSheet, ImageBackground, View, KeyboardAvoidingView, ScrollView, TouchableOpacity, Text } from 'react-native';
 import Header from '../components/Header'
 import colorss from '../constants/colorss';
-import { useEffect, useState } from 'react';
-import LottieView from "lottie-react-native";
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 
@@ -11,23 +9,8 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 const Home = ({ navigation }) => {
  
     
-
-    const [loader, setLoader] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setLoader(false);
-        }, 5000)
-    })
-
-
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-            {(loader) ?
-                <LottieView
-                    source={require("../assets/images/19080-travel-the-world")}
-                    style={styles.animation}
-                    autoPlay
-                /> :
                 <ImageBackground source={{ uri: "https://img.freepik.com/premium-photo/plane-passport-boarding-pass-travel_23-2148169920.jpg?w=2000" }} resizeMode="cover" style={styles.image}>
                     <ScrollView>
                         <View style={styles.container}>
@@ -45,7 +28,7 @@ const Home = ({ navigation }) => {
                             </View>
                         </View>
                     </ScrollView>
-                </ImageBackground>}
+                </ImageBackground>
 
         </KeyboardAvoidingView>
     )
@@ -55,10 +38,6 @@ export default Home
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-    },
-    animation: {
-        backgroundColor: colorss.backgroundColor,
         flex: 1,
     },
     buttonContainer: {
