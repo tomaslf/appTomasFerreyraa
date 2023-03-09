@@ -7,6 +7,8 @@ import CategoriesScreen from '../screens/CategoriesScreen';
 import PlacesScreen from '../screens/PlacesScreen';
 import PlacesDetailScreen from '../screens/PlacesDetailScreen';
 import HotelScreen from '../screens/HotelScreen';
+import ReviewScreen from '../screens/ReviewScreen';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +31,7 @@ const Navigation = () => {
                 title: route.params.title
             })} />
             <Stack.Screen name="Hotel" component={HotelScreen} options={{ title: "Hotels" }} />
+            <Stack.Screen name="Review" component={ReviewScreen} options={{title:"Add Review"}}/>
         </Stack.Navigator>
 
 

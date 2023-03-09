@@ -26,7 +26,7 @@ export default () =>{
                     autoPlay
                 /> :
         
-            (userId) ? <BottomTabNavigator/> : <AuthNavigator/> 
+            (userId) ?  <BottomTabNavigator/> : <AuthNavigator/>
         }</>
     )
 }

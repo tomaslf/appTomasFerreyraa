@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { FlatList, StyleSheet, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useState } from 'react'
 import colorss from '../constants/colorss'
@@ -45,13 +45,14 @@ const WhishListScreen = ({ navigation }) => {
         source={require("../assets/images/123724-wishlist-empty.json")}
         style={styles.animation}
         autoPlay
-      /> : <><FlatList
+      /> : <>
+      <FlatList
         data={items}
         renderItem={renderWishList}
         keyExtractor={item => item.id}
         numColumns={2} />
         <TouchableOpacity onPress={handleDislike} >
-          <Ionicons name="heart-dislike-outline" size={30} color='black' />
+          <Ionicons name="heart-dislike-circle" size={60} color='black' />
         </TouchableOpacity></>
       }
 
@@ -64,7 +65,7 @@ export default WhishListScreen
 const styles = StyleSheet.create({
   animation: {
     backgroundColor: colorss.backgroundColor,
-    marginLeft:20
+    marginLeft: 20
   },
   container: {
     flex: 1,
@@ -76,6 +77,6 @@ const styles = StyleSheet.create({
     padding: 5,
     height: 200,
     width: 190,
-  }
+  },
 
 })

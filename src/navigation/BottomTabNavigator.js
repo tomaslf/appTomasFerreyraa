@@ -4,6 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import {StyleSheet, View } from "react-native";
 import colorss from "../constants/colorss";
 import WhishListNavigation from "./WhishListNavigation";
+import ReviewListNavigation from "./ReviewListNavigation";
 
 
 
@@ -27,6 +28,13 @@ const BottomTabNavigator = () => {
                 tabBarIcon: () => (
                     <View>
                         <Ionicons name="heart" size={25} color='black' />
+                    </View>
+                ),
+            }} />
+             <BottomTabs.Screen name="Reviews" component={ReviewListNavigation} options={{
+                tabBarIcon: () => (
+                    <View>
+                        <Ionicons name="list" size={25} color='black' />
                     </View>
                 ),
             }} />

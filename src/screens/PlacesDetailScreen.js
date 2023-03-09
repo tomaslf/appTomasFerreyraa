@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, StatusBar } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, StatusBar, ScrollView } from 'react-native'
 import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { useSelector, useDispatch } from 'react-redux'
@@ -6,16 +6,17 @@ import { addWishList } from '../store/actions/wishList.action'
 import { useState } from 'react'
 
 
+
 const PlacesDetailScreen = ({ navigation }) => {
 
   const dispatch = useDispatch()
   const detail = useSelector(state => state.places.selected)
   const [like, setLike] = useState(<Ionicons name="heart-outline" size={30} color='black' />)
+  
 
   const handleWishList = () => {
     dispatch(addWishList(detail))
     setLike(<Ionicons name="heart" size={30} color='black' />)
-    
   }
 
   const handleHotel = () => {
@@ -23,23 +24,27 @@ const PlacesDetailScreen = ({ navigation }) => {
       hotels: detail.hotels,
     })
   }
-  
+
+  const handleReview = () => {
+    navigation.navigate("Review")
+  }
+
 
 
   return (
 
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: detail.img }} />
+      
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.icons}>
           <Ionicons name="airplane" size={30} color='black' />
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.icons} >
           <Ionicons name="map" size={30} color='black' />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.icons}>
-          <Ionicons name="restaurant" size={30} color='black' />
+        <TouchableOpacity style={styles.icons} onPress={handleReview} >
+          <Ionicons name="camera" size={30} color='black' />
         </TouchableOpacity>
         <TouchableOpacity style={styles.icons} onPress={handleHotel} >
           <Ionicons name="bed" size={30} color='black' />
@@ -55,14 +60,15 @@ const PlacesDetailScreen = ({ navigation }) => {
       <Text style={styles.description}>
         {detail.description}
       </Text>
-    </View>
 
+    </View>
   )
 }
 
 export default PlacesDetailScreen
 
 const styles = StyleSheet.create({
+
   imgContainer: {
     height: 400,
     backgroundColor: 'red',
