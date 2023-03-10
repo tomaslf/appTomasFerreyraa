@@ -1,10 +1,10 @@
-import { StyleSheet, View, FlatList, KeyboardAvoidingView, ScrollView } from 'react-native'
 import React from 'react'
+import { StyleSheet, View, FlatList, KeyboardAvoidingView } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
 import CategoriesPlaces from '../components/CategoriesPlaces'
 import Header from '../components/Header'
+import { selectedCategory } from '../store/actions/category.action'
 import colorss from '../constants/colorss'
-import { useSelector, useDispatch } from 'react-redux'
-import {selectedCategory} from '../store/actions/category.action'
 
 const CategoriesScreen = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -25,17 +25,17 @@ const CategoriesScreen = ({ navigation }) => {
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-          
-                <View style={styles.container}>
-                    <Header title={"Where do you want to go?"} />
-                    <FlatList
-                        
-                        showsVerticalScrollIndicator={false}
-                        data={categories}
-                        renderItem={renderCategories}
-                        keyExtractor={item => item.id}
-                        />
-                </View >
+
+            <View style={styles.container}>
+                <Header title={"Where do you want to go?"} />
+                <FlatList
+
+                    showsVerticalScrollIndicator={false}
+                    data={categories}
+                    renderItem={renderCategories}
+                    keyExtractor={item => item.id}
+                />
+            </View >
 
 
         </KeyboardAvoidingView>

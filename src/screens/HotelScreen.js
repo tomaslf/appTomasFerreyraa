@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { StyleSheet,View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { WebView } from 'react-native-webview'
 import colorss from '../constants/colorss'
 import LottieView from "lottie-react-native";
@@ -13,14 +13,14 @@ const HotelScreen = ({ route }) => {
       setLoader(false);
     }, 4000)
   })
-  
+
   return (
     <View style={styles.container}>
       {(loader) ? <LottieView
         source={require("../assets/images/98089-loader.json")}
         style={styles.animation}
         autoPlay
-      />  : <WebView style={{backgroundColor:colorss.backgroundColor}} source={{ uri: route.params.hotels }} />}
+      /> : <WebView style={{ backgroundColor: colorss.backgroundColor }} source={{ uri: route.params.hotels }} />}
     </View>
   )
 }
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
 
   },
   animation: {
-    alignContent:'center',
-    justifyContent:'center',
+    alignContent: 'center',
+    justifyContent: 'center',
     backgroundColor: colorss.backgroundColor,
   },
 

@@ -1,22 +1,23 @@
-import {FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useEffect } from 'react'
+import { FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
 import PlacesItems from '../components/PlacesItems'
 import colorss from '../constants/colorss'
-import { useSelector, useDispatch } from 'react-redux'
+
 import { selectedPlace, filteredPlace } from '../store/actions/places.action'
 
 
-const PlacesScreen = ({ navigation}) => {
+const PlacesScreen = ({ navigation }) => {
 
     const dispatch = useDispatch();
     const categoryPlaces = useSelector(state => state.places.filteredPlaces);
     const category = useSelector(state => state.categories.selected);
 
     useEffect(() => {
-    dispatch(filteredPlace(category.id))
+        dispatch(filteredPlace(category.id))
     }, [])
-    
+
 
 
     const handleSelectedPlace = item => {
@@ -39,13 +40,13 @@ const PlacesScreen = ({ navigation}) => {
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-           <View style={styles.container}>
-                    <FlatList
-                        data={categoryPlaces}
-                        renderItem={renderPlaces}
-                        keyExtractor={(item) => item.id}
-                        numColumns={2} />
-                </View>
+            <View style={styles.container}>
+                <FlatList
+                    data={categoryPlaces}
+                    renderItem={renderPlaces}
+                    keyExtractor={(item) => item.id}
+                    numColumns={2} />
+            </View>
         </KeyboardAvoidingView>
 
     )

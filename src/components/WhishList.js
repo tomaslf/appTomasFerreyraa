@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 
 
 
-const WhishList = ({ item, onSelected}) => {
+
+const WhishList = ({ item, onSelected }) => {
     return (
         <View style={styles.whishContainer}>
             <TouchableOpacity onPress={() => onSelected(item)} style={styles.container}>
@@ -16,7 +17,7 @@ const WhishList = ({ item, onSelected}) => {
                     <Image style={styles.image} source={{ uri: item.img }} />
                 </View>
             </TouchableOpacity>
-            
+
         </View>
     )
 }

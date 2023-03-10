@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View, FlatList, Button } from 'react-native'
 import React from 'react'
+import { StyleSheet, View, FlatList, Button } from 'react-native'
+import { useSelector, useDispatch } from 'react-redux'
 import ReviewComponent from '../components/ReviewComponent'
-import { useSelector } from 'react-redux'
-import colorss from '../constants/colorss'
 import { emptyReview } from '../store/actions/review.action'
-import { useDispatch } from 'react-redux'
+import colorss from '../constants/colorss'
 
 
 const DetailReview = () => {
@@ -14,18 +13,18 @@ const DetailReview = () => {
     <ReviewComponent title={item.title} image={item.image} id={item.itemId} />
   )
 
-  const handleDelete = () =>{
+  const handleDelete = () => {
 
 
   }
 
   return (
     <View style={styles.container}>
-        <FlatList
-          data={review}
-          keyExtractor={item => item.id}
-          renderItem={renderItem} />
-          <Button title='Delete all' onPress={handleDelete}/>
+      <FlatList
+        data={review}
+        keyExtractor={item => item.id}
+        renderItem={renderItem} />
+      <Button title='Delete all' onPress={handleDelete} />
     </View>
   )
 }
@@ -33,7 +32,7 @@ const DetailReview = () => {
 export default DetailReview
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
     backgroundColor: colorss.backgroundColor
   }

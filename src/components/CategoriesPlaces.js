@@ -8,7 +8,7 @@ const CategoriesPlaces = ({ item, onSelected }) => {
     <View style={styles.categoriesContainer}>
       <TouchableOpacity style={styles.container} onPress={() => onSelected(item)} >
         <View style={styles.textContainer}>
-          <Text style={{fontFamily:'OswaldRegular', fontSize:18}}>
+          <Text style={{ fontFamily: 'OswaldRegular', fontSize: 18 }}>
             {item.name}
           </Text>
         </View>
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   container: {
-    flex:1,
-    backgroundColor:'#D0B8A8',
-    borderRadius:15,
-    shadowColor:'black',
-    shadowRadius:15,
-    shadowOpacity:0.5,
-    shadowOffset: {height: 2, width:0},
-    elevation:6,
+    flex: 1,
+    backgroundColor: '#D0B8A8',
+    borderRadius: 15,
+    shadowColor: 'black',
+    shadowRadius: 15,
+    shadowOpacity: 0.5,
+    shadowOffset: { height: 2, width: 0 },
+    elevation: 6,
   },
   textContainer: {
     width: '100%',
@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: '100%',
     height: '70%',
-   
+
   },
   image: {
     width: '100%',
     height: '100%',
-    borderBottomLeftRadius:15,
-    borderBottomRightRadius:15,
-   
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+
   }
 })

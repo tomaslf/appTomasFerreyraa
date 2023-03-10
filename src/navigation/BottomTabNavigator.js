@@ -1,10 +1,10 @@
+import { StyleSheet, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Navigation from "./Navigation";
-import Ionicons from '@expo/vector-icons/Ionicons'
-import {StyleSheet, View } from "react-native";
-import colorss from "../constants/colorss";
 import WhishListNavigation from "./WhishListNavigation";
 import ReviewListNavigation from "./ReviewListNavigation";
+import Ionicons from '@expo/vector-icons/Ionicons'
+import colorss from "../constants/colorss";
 
 
 
@@ -14,13 +14,13 @@ const BottomTabNavigator = () => {
     return (
         <BottomTabs.Navigator style={styles.bottomTab} initialRouteName="Home" screenOptions={{
             headerShown: false,
-            tabBarShowLabel:false,
+            tabBarShowLabel: false,
             tabBarStyle: styles.bottomTab
         }}>
-            <BottomTabs.Screen  name="Travel"  component={Navigation} options={{
+            <BottomTabs.Screen name="Travel" component={Navigation} options={{
                 tabBarIcon: () => (
                     <View >
-                        <Ionicons  name="airplane" size={25} color='black' />
+                        <Ionicons name="airplane" size={25} color='black' />
                     </View>
                 ),
             }} />
@@ -31,7 +31,7 @@ const BottomTabNavigator = () => {
                     </View>
                 ),
             }} />
-             <BottomTabs.Screen name="Reviews" component={ReviewListNavigation} options={{
+            <BottomTabs.Screen name="Reviews" component={ReviewListNavigation} options={{
                 tabBarIcon: () => (
                     <View>
                         <Ionicons name="list" size={25} color='black' />
@@ -45,7 +45,7 @@ const BottomTabNavigator = () => {
 export default BottomTabNavigator;
 
 const styles = StyleSheet.create({
-    bottomTab:{
-        backgroundColor:colorss.tabBarColor
+    bottomTab: {
+        backgroundColor: colorss.tabBarColor
     }
 })

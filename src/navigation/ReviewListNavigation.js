@@ -1,8 +1,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import colorss from '../constants/colorss';
 import DetailReview from '../screens/DetailReview';
-
+import colorss from '../constants/colorss';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,8 +12,8 @@ const ReviewListNavigation = () => {
             headerStyle: { backgroundColor: colorss.headerColor }
         }
         } >
-            <Stack.Screen name="Your Reviews" component={DetailReview}/>
-            
+            <Stack.Screen name="Your Reviews" component={DetailReview} />
+
         </Stack.Navigator>
 
 

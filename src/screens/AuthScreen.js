@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, TextInput, Button } from 'react-native'
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import { useState } from 'react'
-import colorss from '../constants/colorss'
+import { useDispatch } from 'react-redux'
+import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, TextInput, Button } from 'react-native'
 import { signUp } from '../store/actions/auth.action'
 import LottieView from "lottie-react-native";
+import colorss from '../constants/colorss'
 
 const AuthScreen = () => {
 
@@ -20,10 +20,10 @@ const AuthScreen = () => {
     return (
         <KeyboardAvoidingView behavior='height' style={styles.screen}>
             <LottieView
-                    source={require("../assets/images/19080-travel-the-world")}
-                    style={styles.animation}
-                    autoPlay
-                />
+                source={require("../assets/images/19080-travel-the-world")}
+                style={styles.animation}
+                autoPlay
+            />
             <View style={styles.container}>
                 <Text style={styles.title}>Register</Text>
                 <Text style={styles.text}>Email</Text>
@@ -51,9 +51,9 @@ export default AuthScreen
 const styles = StyleSheet.create({
     animation: {
         backgroundColor: colorss.backgroundColor,
-        height:200,
-        width:250,
-        marginBottom:20
+        height: 200,
+        width: 250,
+        marginBottom: 20
     },
     screen: {
         flex: 1,
@@ -92,16 +92,16 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: 'blue',
     },
-    buttonContainer:{
-        margin:15
+    buttonContainer: {
+        margin: 15
     },
     textInput: {
         height: 50,
         borderWidth: 0.5,
-        fontSize:17
+        fontSize: 17
     },
-    text:{
+    text: {
         fontSize: 20,
-        margin:10
+        margin: 10
     }
 })

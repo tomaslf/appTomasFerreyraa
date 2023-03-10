@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, StatusBar, ScrollView } from 'react-native'
-import colorss from '../constants/colorss'
-import Ionicons from '@expo/vector-icons/Ionicons'
+import { useState } from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { addWishList } from '../store/actions/wishList.action'
-import { useState } from 'react'
+import colorss from '../constants/colorss'
+import Ionicons from '@expo/vector-icons/Ionicons'
+
 
 
 
@@ -12,7 +13,7 @@ const PlacesDetailScreen = ({ navigation }) => {
   const dispatch = useDispatch()
   const detail = useSelector(state => state.places.selected)
   const [like, setLike] = useState(<Ionicons name="heart-outline" size={30} color='black' />)
-  
+
 
   const handleWishList = () => {
     dispatch(addWishList(detail))
@@ -35,7 +36,7 @@ const PlacesDetailScreen = ({ navigation }) => {
 
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: detail.img }} />
-      
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.icons}>
           <Ionicons name="airplane" size={30} color='black' />

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60
   },
-  buttonGroup:{
-    justifyContent:'flex-end'
+  buttonGroup: {
+    justifyContent: 'flex-end'
   }
 })

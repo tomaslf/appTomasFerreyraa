@@ -17,18 +17,18 @@ export const signUp = (email, password) => {
                 }),
             })
             const data = await response.json()
-    
+
             dispatch({
                 type: SIGNUP,
                 token: data.idToken,
                 userId: data.localId
             })
-            
+
         } catch (error) {
             console.log(error)
         }
     }
-    
-   
+
+
 
 }
