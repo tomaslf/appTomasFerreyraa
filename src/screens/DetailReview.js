@@ -1,9 +1,10 @@
 import React from 'react'
-import { StyleSheet, View, FlatList, Button } from 'react-native'
+import { StyleSheet, View, FlatList, Button, Text } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import ReviewComponent from '../components/ReviewComponent'
 import { emptyReview } from '../store/actions/review.action'
-import colorss from '../constants/colorss'
+import LottieView from "lottie-react-native";
+
 
 
 const DetailReview = () => {
@@ -14,18 +15,23 @@ const DetailReview = () => {
   )
 
   const handleDelete = () => {
-
-
+    dispatch(emptyReview())
   }
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={review}
-        keyExtractor={item => item.id}
-        renderItem={renderItem} />
-      <Button title='Delete all' onPress={handleDelete} />
-    </View>
+
+    (review.length === 0) ? <LottieView
+      source={require("../assets/images/123724-wishlist-empty.json")}
+      style={styles.animation}
+      autoPlay
+    /> :
+      <View style={styles.container}>
+        <FlatList
+          data={review}
+          keyExtractor={item => item.id}
+          renderItem={renderItem} />
+        <Button title='Delete all' onPress={handleDelete} />
+      </View>
   )
 }
 
@@ -34,6 +40,10 @@ export default DetailReview
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colorss.backgroundColor
+    marginBottom: 100,
+  },
+  animation:{
+    marginBottom:80,
+    marginLeft: 20
   }
 })

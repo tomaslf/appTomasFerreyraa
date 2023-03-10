@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, TextInput, Button } from 'react-native'
+import { StyleSheet, View, ScrollView, TextInput, Text, TouchableOpacity, Alert } from 'react-native'
 import { useDispatch } from 'react-redux'
 import { addReview } from '../store/actions/review.action'
 import ImageReviewSelector from '../components/ImageReviewSelector'
 import colorss from '../constants/colorss'
+
 
 const ReviewScreen = ({ navigation }) => {
 
@@ -14,27 +15,24 @@ const ReviewScreen = ({ navigation }) => {
     const handleTitleChange = text => setTitle(text)
 
     const handleSave = () => {
-
-        if (setTitle("")) {
-            alert("Please, add a title and a photo first")
-            console.log("Please, add a title and a photo first")
-        } else {
+        if (title === '' || image === '') {
+            Alert.alert('Error', 'Please write a review and add an image');
+            return;
+          }
             dispatch(addReview(title, image))
             navigation.navigate("Reviews")
             setTitle("")
             setImage("")
-        }
-
-
     }
-
 
     return (
         <ScrollView style={styles.all}>
             <View style={styles.container}>
                 <TextInput style={styles.input} placeholder={'Tell us about the place (Max. 50)'} maxLength={50} onChangeText={handleTitleChange} value={title} />
                 <ImageReviewSelector onImage={setImage} />
-                <Button title='Add Review' onPress={handleSave} />
+                <TouchableOpacity style={styles.review} onPress={handleSave}>
+                    <Text style={styles.textReview}>ADD REVIEW</Text>
+                </TouchableOpacity>
             </View>
         </ScrollView>
     )
@@ -43,8 +41,26 @@ const ReviewScreen = ({ navigation }) => {
 export default ReviewScreen
 
 const styles = StyleSheet.create({
-    all: {
-        backgroundColor: colorss.backgroundColor
+    review: {
+        backgroundColor: colorss.headerColor,
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        width: 120,
+        height: 70,
+        borderRadius: 20,
+        shadowColor: 'black',
+        shadowRadius: 15,
+        shadowOpacity: 0.5,
+        shadowOffset: { height: 2, width: 0 },
+        elevation: 6,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    textReview:{
+        fontSize:14,
+        fontWeight:'bold',
+        color:'white'
     },
     container: {
         flex: 1,

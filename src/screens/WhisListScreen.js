@@ -40,11 +40,13 @@ const WhishListScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {(items.length === 0) ? <LottieView
-        source={require("../assets/images/123724-wishlist-empty.json")}
-        style={styles.animation}
-        autoPlay
-      /> : <>
+      {(items.length === 0) ? <>
+        <LottieView
+          source={require("../assets/images/123724-wishlist-empty.json")}
+          style={styles.animation}
+          autoPlay
+        />
+      </> : <>
         <FlatList
           data={items}
           renderItem={renderWishList}
@@ -63,14 +65,15 @@ export default WhishListScreen
 
 const styles = StyleSheet.create({
   animation: {
-    backgroundColor: colorss.backgroundColor,
-    marginLeft: 20
+    marginLeft: 20,
+    marginBottom: 45
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colorss.backgroundColor
+    marginBottom: 100,
+    marginTop: 20,
   },
   wishContainer: {
     padding: 5,

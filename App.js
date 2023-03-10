@@ -14,12 +14,13 @@ export default function App() {
   }
 
   return (
-    <Provider store={store} >
-      <NavigationContainer >
-        <MainNavigation />
+    <Provider  store={store} >
+      <NavigationContainer  >
+        <MainNavigation  />
       </NavigationContainer>
     </Provider>
 
 
   );
 }
+

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { addWishList } from '../store/actions/wishList.action'
 import colorss from '../constants/colorss'
@@ -33,36 +33,46 @@ const PlacesDetailScreen = ({ navigation }) => {
 
 
   return (
+    <View style={{flex:1}}>
+      <ScrollView>
+        <View style={styles.container}>
+          <Image style={styles.image} source={{ uri: detail.img }} />
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.icons}>
+              <Ionicons name="airplane" size={30} color='black' />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.icons} >
+              <Ionicons name="map" size={30} color='black' />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.icons} onPress={handleReview} >
+              <Ionicons name="camera" size={30} color='black' />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.icons} onPress={handleHotel} >
+              <Ionicons name="bed" size={30} color='black' />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.cityContainer}>
+            <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
+            <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginTop: 10 }}>
+              {like}
+            </TouchableOpacity>
+          </View>
+          <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 5 }} />
+          <Text style={styles.description}>
+            {detail.description}
+          </Text>
 
-    <View style={styles.container}>
-      <Image style={styles.image} source={{ uri: detail.img }} />
+        </View>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.icons}>
-          <Ionicons name="airplane" size={30} color='black' />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.icons} >
-          <Ionicons name="map" size={30} color='black' />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.icons} onPress={handleReview} >
-          <Ionicons name="camera" size={30} color='black' />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.icons} onPress={handleHotel} >
-          <Ionicons name="bed" size={30} color='black' />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.cityContainer}>
-        <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
-        <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginTop: 10 }}>
-          {like}
-        </TouchableOpacity>
-      </View>
-      <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 5 }} />
-      <Text style={styles.description}>
-        {detail.description}
-      </Text>
+      </ScrollView>
 
     </View>
+
+
+
+
+
+
   )
 }
 
@@ -70,19 +80,14 @@ export default PlacesDetailScreen
 
 const styles = StyleSheet.create({
 
-  imgContainer: {
-    height: 400,
-    backgroundColor: 'red',
-    width: 200
-  },
   container: {
     flex: 1,
     padding: 15,
-    backgroundColor: colorss.backgroundColor,
+    marginBottom:80
   },
   image: {
-    width: '100%',
-    height: '55%',
+    height:400,
+    maxWidth:450,
     borderRadius: 30,
     marginBottom: 10,
 

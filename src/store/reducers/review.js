@@ -14,8 +14,8 @@ const ReviewReducer = (state = initialState, action) => {
                 review: state.review.concat(newReview)
             }
             case EMPTY_REVIEW:
-                const emptyReview = [...state.items].filter((item) => item === action.payload.itemId)
-                return { ...state, items: emptyReview }
+                return  {...state,  review: []}
+               
 
         default:
              return state

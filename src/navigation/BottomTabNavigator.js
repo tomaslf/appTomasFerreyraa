@@ -15,26 +15,27 @@ const BottomTabNavigator = () => {
         <BottomTabs.Navigator style={styles.bottomTab} initialRouteName="Home" screenOptions={{
             headerShown: false,
             tabBarShowLabel: false,
-            tabBarStyle: styles.bottomTab
+            tabBarStyle: styles.bottomTab,
         }}>
             <BottomTabs.Screen name="Travel" component={Navigation} options={{
-                tabBarIcon: () => (
+                tabBarIcon: ({focused }) => (
                     <View >
-                        <Ionicons name="airplane" size={25} color='black' />
+                        <Ionicons name="airplane"  color={focused ? colorss.headerColor : 'black'} size={30} />
                     </View>
                 ),
+                
             }} />
             <BottomTabs.Screen name="WhishList" component={WhishListNavigation} options={{
-                tabBarIcon: () => (
+                tabBarIcon: ({focused }) => (
                     <View>
-                        <Ionicons name="heart" size={25} color='black' />
+                        <Ionicons name="heart" color={focused ? colorss.headerColor : 'black'} size={30} />
                     </View>
                 ),
             }} />
             <BottomTabs.Screen name="Reviews" component={ReviewListNavigation} options={{
-                tabBarIcon: () => (
+                tabBarIcon: ({focused }) => (
                     <View>
-                        <Ionicons name="list" size={25} color='black' />
+                        <Ionicons name="list" size={30} color={focused ? colorss.headerColor : 'black'} />
                     </View>
                 ),
             }} />
@@ -46,6 +47,18 @@ export default BottomTabNavigator;
 
 const styles = StyleSheet.create({
     bottomTab: {
-        backgroundColor: colorss.tabBarColor
+        backgroundColor: colorss.tabBarColor,
+        height:70,
+        shadowColor:'black',
+        shadowOffset:{width: 0,height:0},
+        shadowOpacity: 0.5,
+        shadowRadius: 0.5,
+        elevation:5,
+        position:'absolute',
+        bottom:15,
+        left:8,
+        right:8,
+        borderRadius:15,
+
     }
 })

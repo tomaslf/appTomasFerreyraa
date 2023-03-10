@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Button, Alert, Image } from 'react-native'
 import * as ImagePicker from 'expo-image-picker'
+import colorss from '../constants/colorss'
 
 const ImageReviewSelector = props => {
 
@@ -16,16 +17,24 @@ const ImageReviewSelector = props => {
         return true
     }
     const handleImage = async () => {
-        const isCameraPermisionsOk = await verifyPermissions()
-        if (!isCameraPermisionsOk) return
-        const image = await ImagePicker.launchCameraAsync({
-            allowsEditing: true,
-            quality: 0.8
-        })
 
-        setPicked(image.assets[0].uri)
-        props.onImage(image.assets[0].uri)
-
+        try {
+            const isCameraPermisionsOk = await verifyPermissions()
+            if (!isCameraPermisionsOk) return
+            const image = await ImagePicker.launchCameraAsync({
+                allowsEditing: true,
+                quality: 0.8
+            })
+    
+            setPicked(image.assets[0].uri)
+            props.onImage(image.assets[0].uri)
+    
+            
+        } catch (error) {
+            console.log(err.message)
+            throw err
+        }
+       
     }
 
     return (
@@ -33,7 +42,7 @@ const ImageReviewSelector = props => {
             <View style={styles.preview}>
                 {!picked ? (<Text>Choose a Photo</Text>) : (<Image style={styles.image} source={{ uri: picked }} />)}
             </View>
-            <Button title='Choose Photo' onPress={handleImage} />
+            <Button title='Choose Photo' color={colorss.headerColor} onPress={handleImage} />
         </View>
 
     )

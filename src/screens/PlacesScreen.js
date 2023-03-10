@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { FlatList, ScrollView, StyleSheet, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
+import { FlatList, StyleSheet, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import PlacesItems from '../components/PlacesItems'
 import colorss from '../constants/colorss'
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colorss.backgroundColor
+        marginBottom:100
 
 
     },

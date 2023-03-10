@@ -35,5 +35,5 @@ const styles = StyleSheet.create({
     animation: {
         backgroundColor: colorss.backgroundColor,
         flex: 1,
-    },
+    }
 })
