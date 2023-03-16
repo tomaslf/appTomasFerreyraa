@@ -2,11 +2,12 @@ import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
 
-const ReviewComponent = ({ title, image }) => {
+const ReviewComponent = ({ title, image, cityName }) => {
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: image }} />
             <View style={styles.review}>
+                <Text style={styles.title}>City:{cityName}</Text>
                 <Text style={styles.title}>{title}</Text>
             </View>
         </View>

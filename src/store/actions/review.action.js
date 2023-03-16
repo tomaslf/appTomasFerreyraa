@@ -1,16 +1,17 @@
 import * as FileSystem from 'expo-file-system'
-import { insertReview, fetchReviews } from '../../db'
+import { insertReview, fetchReviews, deleteReviews } from '../../db'
 
 
 export const ADD_REVIEW = "ADD_REVIEW"
 export const EMPTY_REVIEW = "EMPTY_REVIEW"
 export const LOAD_REVIEW = "LOAD_REVIEW"
+export const EMPTY_DATABASEREVIEW = "EMPTY_DATABASEREVIEW"
 
 export const emptyReview = () => ({
     type: EMPTY_REVIEW,
 })
 
-export const addReview = (title, image) => {
+export const addReview = (title, cityName, image) => {
     // return { type: ADD_REVIEW, payload: {title}}
     return async dispatch => {
         const fileName = image.split('/').pop()
@@ -21,7 +22,7 @@ export const addReview = (title, image) => {
                 from: image,
                 to: Path
             })
-            const result = await insertReview(title, Path)
+            const result = await insertReview(title, cityName, Path)
             console.log(result)
 
         } catch (err) {
@@ -29,17 +30,29 @@ export const addReview = (title, image) => {
             throw err
         }
 
-        dispatch({ type: ADD_REVIEW, payload: { title, image: Path } })
+        dispatch({ type: ADD_REVIEW, payload: { title, cityName, image: Path } })
     }
-}  
+}
 
 export const loadReview = () => {
     return async dispatch => {
         try {
             const result = await fetchReviews()
             console.log(result)
-            dispatch({ type: LOAD_REVIEW, review: result.rows._array  })
+            dispatch({ type: LOAD_REVIEW, review: result.rows._array })
         } catch (error) {
         }
     }
 }
+
+export const emptyDataBaseReview = () => {
+    return async dispatch => {
+        try {
+            const result = await deleteReviews()
+            console.log(result)
+            dispatch({ type: EMPTY_DATABASEREVIEW, review: result.rows._array })
+        } catch (error) {
+        }
+    }
+}
+

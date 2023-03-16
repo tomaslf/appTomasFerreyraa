@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-around',
-        backgroundColor:colorss.headerColor,
+        backgroundColor:colorss.tabBarColor,
         borderRadius: 15,
         padding: 15,
         shadowColor: 'black',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 
     },
     icon:{
-        backgroundColor:colorss.tabBarColor,
+        backgroundColor:colorss.headerColor,
         padding:10,
         borderRadius:15,
         

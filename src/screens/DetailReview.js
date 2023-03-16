@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, FlatList, Button, Text } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import ReviewComponent from '../components/ReviewComponent'
-import { emptyReview, loadReview } from '../store/actions/review.action'
+import { emptyDataBaseReview, emptyReview, loadReview } from '../store/actions/review.action'
 import LottieView from "lottie-react-native";
 import { useEffect } from 'react'
 
@@ -16,11 +16,12 @@ const DetailReview = () => {
   const review = useSelector(state => state.review.review)
 
   const renderItem = ({ item }) => (
-    <ReviewComponent title={item.title} image={item.image} id={item.itemId} />
+    <ReviewComponent title={item.title} cityName={item.cityName} image={item.image} id={item.itemId}  />
   )
 
   const handleDelete = () => {
     dispatch(emptyReview())
+    dispatch(emptyDataBaseReview())
   }
 
   useEffect(() => {

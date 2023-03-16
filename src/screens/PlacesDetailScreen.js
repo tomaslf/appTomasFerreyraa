@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, FlatList } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { addWishList } from '../store/actions/wishList.action'
 import colorss from '../constants/colorss'
@@ -13,6 +13,16 @@ const PlacesDetailScreen = ({ navigation }) => {
   const dispatch = useDispatch()
   const detail = useSelector(state => state.places.selected)
   const [like, setLike] = useState(<Ionicons name="heart-outline" size={30} color='black' />)
+
+  const dataImages = [
+    { id: 1, uri: detail.img },
+    { id: 2, uri: detail.img2 },
+    { id: 3, uri: detail.img3 },
+  ]
+
+  const renderItem = ({ item }) => (
+    <Image style={styles.image} source={{ uri: item.uri }} />
+  );
 
 
   const handleWishList = () => {
@@ -32,15 +42,18 @@ const PlacesDetailScreen = ({ navigation }) => {
 
 
 
+
   return (
-    <View style={{flex:1}}>
+    <View style={{ flex: 1 }}>
       <ScrollView>
         <View style={styles.container}>
-          <Image style={styles.image} source={{ uri: detail.img }} />
+          <FlatList
+            horizontal={true}
+            data={dataImages}
+            keyExtractor={item => item.id}
+            renderItem={renderItem}
+          />
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.icons}>
-              <Ionicons name="airplane" size={30} color='black' />
-            </TouchableOpacity>
             <TouchableOpacity style={styles.icons} >
               <Ionicons name="map" size={30} color='black' />
             </TouchableOpacity>
@@ -83,13 +96,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 15,
-    marginBottom:80
+    marginBottom: 80
   },
   image: {
-    height:400,
-    maxWidth:450,
+    width: 330,
+    height: 400,
     borderRadius: 30,
-    marginBottom: 10,
+    marginBottom: 12,
+    marginRight: 10
 
   },
   buttonContainer: {

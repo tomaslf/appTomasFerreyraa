@@ -10,24 +10,28 @@ const ReviewScreen = ({ navigation }) => {
 
     const dispatch = useDispatch()
     const [title, setTitle] = useState()
+    const [cityName, setCityName] = useState("")
     const [image, setImage] = useState()
 
     const handleTitleChange = text => setTitle(text)
+    const handleCityChange = text => setCityName(text)
 
     const handleSave = () => {
-        if (title === '' || image === '') {
+        if (title === '' || cityName === '' || image === '') {
             Alert.alert('Error', 'Please write a review and add an image');
             return;
-          }
-            dispatch(addReview(title, image))
-            navigation.navigate("Reviews")
-            setTitle("")
-            setImage("")
+        }
+        dispatch(addReview(title, image, cityName))
+        navigation.navigate("Reviews")
+        setTitle("")
+        setCityName("")
+        setImage("")
     }
 
     return (
         <ScrollView style={styles.all}>
             <View style={styles.container}>
+                <TextInput style={styles.input} placeholder={'City'} onChangeText={handleCityChange} value={cityName} />
                 <TextInput style={styles.input} placeholder={'Tell us about the place (Max. 50)'} maxLength={50} onChangeText={handleTitleChange} value={title} />
                 <ImageReviewSelector onImage={setImage} />
                 <TouchableOpacity style={styles.review} onPress={handleSave}>
@@ -57,10 +61,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    textReview:{
-        fontSize:14,
-        fontWeight:'bold',
-        color:'white'
+    textReview: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: 'white'
     },
     container: {
         flex: 1,
