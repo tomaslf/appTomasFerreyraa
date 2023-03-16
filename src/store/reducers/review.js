@@ -1,4 +1,4 @@
-import { ADD_REVIEW, EMPTY_REVIEW } from "../actions/review.action"
+import { ADD_REVIEW, EMPTY_REVIEW, LOAD_REVIEW } from "../actions/review.action"
 import Review from '../../models/Review'
 
 const initialState = {
@@ -13,12 +13,25 @@ const ReviewReducer = (state = initialState, action) => {
                 ...state,
                 review: state.review.concat(newReview)
             }
-            case EMPTY_REVIEW:
-                return  {...state,  review: []}
-               
+        case EMPTY_REVIEW:
+            return { ...state, review: [] }
+
+        case LOAD_REVIEW:
+            return {
+                ...state,
+                review: action.review.map(
+                    item =>
+                        new Review(
+                            item.id.toString(),
+                            item.title,
+                            item.image
+                        )
+                ),
+            }
+
 
         default:
-             return state
+            return state
     }
 }
 

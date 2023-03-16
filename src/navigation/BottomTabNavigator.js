@@ -20,7 +20,7 @@ const BottomTabNavigator = () => {
             <BottomTabs.Screen name="Travel" component={Navigation} options={{
                 tabBarIcon: ({focused }) => (
                     <View >
-                        <Ionicons name="airplane"  color={focused ? colorss.headerColor : 'black'} size={30} />
+                        <Ionicons name="airplane"  color={focused ? colorss.tabBarColor : 'black'} size={30} />
                     </View>
                 ),
                 
@@ -28,14 +28,14 @@ const BottomTabNavigator = () => {
             <BottomTabs.Screen name="WhishList" component={WhishListNavigation} options={{
                 tabBarIcon: ({focused }) => (
                     <View>
-                        <Ionicons name="heart" color={focused ? colorss.headerColor : 'black'} size={30} />
+                        <Ionicons name="heart" color={focused ? colorss.tabBarColor : 'black'} size={30} />
                     </View>
                 ),
             }} />
             <BottomTabs.Screen name="Reviews" component={ReviewListNavigation} options={{
                 tabBarIcon: ({focused }) => (
                     <View>
-                        <Ionicons name="list" size={30} color={focused ? colorss.headerColor : 'black'} />
+                        <Ionicons name="list" size={30} color={focused ? colorss.tabBarColor : 'black'} />
                     </View>
                 ),
             }} />
@@ -47,7 +47,7 @@ export default BottomTabNavigator;
 
 const styles = StyleSheet.create({
     bottomTab: {
-        backgroundColor: colorss.tabBarColor,
+        backgroundColor: colorss.headerColor,
         height:70,
         shadowColor:'black',
         shadowOffset:{width: 0,height:0},
