@@ -1,9 +1,10 @@
 import React from 'react'
-import { StyleSheet, View, FlatList, Button, Text } from 'react-native'
+import { StyleSheet, View, FlatList, Button } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import ReviewComponent from '../components/ReviewComponent'
 import { emptyDataBaseReview, emptyReview, loadReview } from '../store/actions/review.action'
 import LottieView from "lottie-react-native";
+import colorss from '../constants/colorss'
 import { useEffect } from 'react'
 
 
@@ -16,7 +17,7 @@ const DetailReview = () => {
   const review = useSelector(state => state.review.review)
 
   const renderItem = ({ item }) => (
-    <ReviewComponent title={item.title} cityName={item.cityName} image={item.image} id={item.itemId}  />
+    <ReviewComponent title={item.title} cityName={item.cityName} image={item.image} id={item.itemId} />
   )
 
   const handleDelete = () => {
@@ -27,7 +28,7 @@ const DetailReview = () => {
   useEffect(() => {
     dispatch(loadReview())
   }, [])
-  
+
 
   return (
 
@@ -41,7 +42,10 @@ const DetailReview = () => {
           data={review}
           keyExtractor={item => item.id}
           renderItem={renderItem} />
-        <Button title='Delete all' onPress={handleDelete} />
+        <View style={styles.buttonContainer}>
+          <Button color={colorss.headerColor} title='Delete all' onPress={handleDelete} />
+        </View>
+
       </View>
   )
 }
@@ -53,8 +57,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 100,
   },
-  animation:{
-    marginBottom:80,
+  animation: {
+    marginBottom: 80,
     marginLeft: 20
+  },
+  buttonContainer:{
+    alignSelf:'center'
   }
 })

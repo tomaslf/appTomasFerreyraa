@@ -5,10 +5,10 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 const ReviewComponent = ({ title, image, cityName }) => {
     return (
         <View style={styles.container}>
+            <Text style={styles.title}>City: {cityName}</Text>
             <Image style={styles.image} source={{ uri: image }} />
             <View style={styles.review}>
-                <Text style={styles.title}>City:{cityName}</Text>
-                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.title}>Description: {title}</Text>
             </View>
         </View>
     )
@@ -18,9 +18,17 @@ export default ReviewComponent
 
 const styles = StyleSheet.create({
     container: {
-        margin: 20,
-        alignItems: 'center',
-        justifyContent: 'center'
+        margin:20,
+        backgroundColor: '#D0B8A8',
+        borderRadius: 15,
+        shadowColor: 'black',
+        shadowRadius: 15,
+        shadowOpacity: 0.5,
+        shadowOffset: { height: 2, width: 0 },
+        elevation: 6,
+        alignContent:'center',
+        justifyContent:'center',
+        alignItems:'center'
     },
     image: {
         width: 300,
@@ -33,9 +41,10 @@ const styles = StyleSheet.create({
     },
     title: {
         fontFamily: 'OswaldRegular',
-        fontSize: 15,
+        fontSize: 18,
         marginBottom: 6,
-        textAlign: 'center'
+        textAlign: 'center',
+        padding:10
     },
 
 })

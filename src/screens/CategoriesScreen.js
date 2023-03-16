@@ -25,19 +25,15 @@ const CategoriesScreen = ({ navigation }) => {
 
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
-
             <View style={styles.container}>
                 <Header title={"Where do you want to go?"} />
                 <FlatList
-
                     showsVerticalScrollIndicator={false}
                     data={categories}
                     renderItem={renderCategories}
                     keyExtractor={item => item.id}
                 />
             </View >
-
-
         </KeyboardAvoidingView>
 
 
@@ -60,5 +56,6 @@ const styles = StyleSheet.create({
         padding: 10,
         height: 280,
         width: 300,
+        marginTop:20,
     }
 })

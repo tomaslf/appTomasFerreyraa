@@ -11,8 +11,7 @@ export const emptyReview = () => ({
     type: EMPTY_REVIEW,
 })
 
-export const addReview = (title, cityName, image) => {
-    // return { type: ADD_REVIEW, payload: {title}}
+export const addReview = (title, image, cityName) => {
     return async dispatch => {
         const fileName = image.split('/').pop()
         const Path = FileSystem.documentDirectory + fileName
@@ -22,7 +21,7 @@ export const addReview = (title, cityName, image) => {
                 from: image,
                 to: Path
             })
-            const result = await insertReview(title, cityName, Path)
+            const result = await insertReview(title, Path, cityName)
             console.log(result)
 
         } catch (err) {
@@ -30,7 +29,7 @@ export const addReview = (title, cityName, image) => {
             throw err
         }
 
-        dispatch({ type: ADD_REVIEW, payload: { title, cityName, image: Path } })
+        dispatch({ type: ADD_REVIEW, payload: { title, image: Path, cityName } })
     }
 }
 
