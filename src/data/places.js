@@ -19,8 +19,7 @@ const places = [
         hotels: 'https://bit.ly/3WZE1K9',
         img: "https://upload.wikimedia.org/wikipedia/commons/4/44/Plaza_Mayor_de_Madrid_06.jpg",
         img2: "https://www.spain.info/export/sites/segtur/.content/imagenes/reportajes/madrid/vistas-madrid-gran-via-c-alev-takil-u-x2Or94kjaqo.jpg",
-        img3: "https://estaticos.esmadrid.com/cdn/farfuture/cWEgd6nsFZn5_x7RaedKMR9rkPA7ZC3zVuc90k6gXwA/mtime:1646729215/sites/default/files/styles/content_type_full/public/editorial/estaciones.jpg?itok=8J6mUZg3"
-
+        img3: 'https://aldianews.com/sites/default/files/2022-08/Puerta%20de%20Alcala%CC%81_Madrid.jpg'
     },
     {
         id: "3",
@@ -63,7 +62,7 @@ const places = [
         description: "is the capital and primate city of Argentina. The city is located on the western shore of the Río de la Plata, on South America's southeastern coast. 'Buenos Aires' can be translated as 'fair winds' or 'good airs', but the former was the meaning intended by the founders in the 16th century, by the use of the original name 'Real de Nuestra Señora Santa María del Buen Ayre', named after the Madonna of Bonaria in Sardinia, Italy.",
         hotels: 'http://bit.ly/3JxsezC',
         img: "https://estaticos-cdn.elperiodico.com/clip/80ccbd4a-9d52-4b2a-b2b3-e9c254b3447c_alta-libre-aspect-ratio_default_0.jpg",
-        img2:'https://destinationlesstravel.com/wp-content/uploads/2022/08/Beautiful-View-of-the-city-of-Buenos-Aires-Argentina.jpg.webp',
+        img2: 'https://destinationlesstravel.com/wp-content/uploads/2022/08/Beautiful-View-of-the-city-of-Buenos-Aires-Argentina.jpg.webp',
         img3: 'https://www.costacruceros.es/content/dam/costa/inventory-assets/ports/BUE/buenos-aires.jpg'
     },
     {
@@ -106,7 +105,9 @@ const places = [
         categories: '1',
         description: "Is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a 2,430-meter (7,970 ft) mountain ridge.Often referred to as the 'Lost City of the Incas', it is the most familiar icon of the Inca Empire. It is located in the Machupicchu District within Urubamba Province[4] above the Sacred Valley, which is 80 kilometers (50 mi) northwest of Cusco. The Urubamba River flows past it, cutting through the Cordillera and creating a canyon with a tropical mountain climate",
         hotels: 'http://bit.ly/3JxsezC',
-        img: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg"
+        img: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg",
+        img2: 'https://as01.epimg.net/diarioas/imagenes/2021/08/06/actualidad/1628267854_729207_1628268324_noticia_normal.jpg',
+        img3: 'https://www.peru.travel/Contenido/Atractivo/Imagen/pe/145/1.4/Principal/Machu%20Picchu.jpg'
     },
     {
         id: "11",
@@ -115,7 +116,9 @@ const places = [
         categories: '2',
         description: "Also referred to as Playa Azul (Blue Beach), is a resort town in the province of Matanzas, Cuba, and one of the largest resort areas in the Caribbean. Varadero Beach is rated one of the world's best beaches in TripAdvisor's Traveler's Choice Awards since 2019, ranking at number two.[3] Common activities include fishing and excursions to Matanzas, Cárdenas, and the Península de Zapata.",
         hotels: 'http://bit.ly/3JxsezC',
-        img: "https://content.r9cdn.net/rimg/dimg/76/09/5da6a15f-lm-159315-1736a4bb293.jpg?width=688&height=350&xhint=1850&yhint=1532&crop=true"
+        img: 'https://static.euronews.com/articles/stories/03/94/74/16/1440x810_cmsv2_2a4304fe-1c85-5ecb-96be-39c4d6e41c53-3947416.jpg',
+        img2: 'https://content.r9cdn.net/rimg/dimg/23/7c/ce64c78b-city-49786-165d3de60d1.jpg?crop=true&width=1366&height=768&xhint=2263&yhint=1514',
+        img3: 'https://wcm.transat.com/getmedia/3152b7bc-b01e-4c45-802c-ad8190c6b5c1/VRA-Paradisus-Varadero-Aerial-002.aspx'
     },
     {
         id: "12",
@@ -124,7 +127,9 @@ const places = [
         categories: '2',
         description: "Is an island in the Mexican state of Quintana Roo, located on the north coast of the Yucatán Peninsula. It is approximately 41.84 kilometres (26.00 miles) long and 1.5 kilometres (0.9 miles) wide, and it is separated from the mainland by 10 km of shallow lagoon that is home to flamingos, pelicans and other rich birdlife. Holbox Island is part of the Municipality of Lázaro Cárdenas and also part of the Yum Balam Biosphere Reserve.",
         hotels: 'http://bit.ly/3JxsezC',
-        img: "https://www.barcelo.com/guia-turismo/wp-content/uploads/2021/02/holbox-isla-pasion-888.jpg"
+        img: "https://www.barcelo.com/guia-turismo/wp-content/uploads/2021/02/holbox-isla-pasion-888.jpg",
+        img2: 'https://www.turismomexico.es/wp-content/uploads/2017/01/holbox.jpg',
+        img3: 'https://www.dallasnews.com/resizer/4HgIQU9bFe7HmhPS2j62ys90F7k=/arc-anglerfish-arc2-prod-dmn/public/XXMGNKLDAZEBHCNM6XJYUMTF5M.JPG'
     },
     {
         id: "13",
@@ -133,7 +138,9 @@ const places = [
         categories: '3',
         description: "Often called New York City[a] or NYC, is the most populous city in the United States. With a 2020 population of 8,804,190 distributed over 300.46 square miles (778.2 km2), New York City is the most densely populated major city in the United States and more than twice as populous as Los Angeles, the nation's second largest city. New York City is located at the southern tip of New York State.",
         hotels: 'http://bit.ly/3JxsezC',
-        img: "https://mindfultravelbysara.com/wp-content/uploads/2015/05/nueva-york-imprescindibl.jpg"
+        img: "https://mevoydeviajea.files.wordpress.com/2013/04/estatua-de-la-libertad-new-york.jpg?w=724",
+        img2: 'https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/blog/eeuu_nuevayork_timessquare_gettyrf_483467278_osmany_torres_martin_getty_images_.jpg?itok=H34V5VHX',
+        img3: 'https://images.hola.com/imagenes/viajes/20200416165850/manhattan-nueva-york-maravillas-desde-mi-pantalla/0-812-351/nueva-york-manhattan-maravillas-desde-mi-pantalla-t.jpg'
     },
     {
         id: "14",
@@ -142,7 +149,9 @@ const places = [
         categories: '3',
         description: "Is the capital and largest city of England and the United Kingdom, with a population of just under 9 million.It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia.The City of London, its ancient core and financial centre, was founded by the Romans as Londinium and retains its medieval boundaries.",
         hotels: 'http://bit.ly/3JxsezC',
-        img: "https://uceap.universityofcalifornia.edu/sites/default/files/2019-04/english-universities-m2.jpg"
+        img: "https://uceap.universityofcalifornia.edu/sites/default/files/2019-04/english-universities-m2.jpg",
+        img2: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/London-Eye-2009.JPG/1200px-London-Eye-2009.JPG',
+        img3: 'https://s27363.pcdn.co/wp-content/uploads/2020/05/Best-Things-to-do-in-London-1200x900.jpg.optimal.jpg'
     },
 
 ]
