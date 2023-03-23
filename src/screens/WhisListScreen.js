@@ -3,10 +3,9 @@ import { FlatList, StyleSheet, View, TouchableOpacity } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import WishList from '../components/WhishList'
 import { selectedPlace } from '../store/actions/places.action'
-import { emptyWishList } from '../store/actions/wishList.action'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import LottieView from "lottie-react-native";
-import colorss from '../constants/colorss'
+
 
 const WhishListScreen = ({ navigation }) => {
 
@@ -26,9 +25,7 @@ const WhishListScreen = ({ navigation }) => {
     })
   }
 
-  const handleDislike = () => {
-    dispatch(emptyWishList(detail))
-  }
+ 
 
   const renderWishList = ({ item }) => (
     <View style={styles.wishContainer} >
@@ -52,9 +49,7 @@ const WhishListScreen = ({ navigation }) => {
           renderItem={renderWishList}
           keyExtractor={item => item.id}
           numColumns={2} />
-        <TouchableOpacity onPress={handleDislike} >
-          <Ionicons name="heart-dislike-circle" size={60} color='black' />
-        </TouchableOpacity></>
+        </>
       }
 
     </View>

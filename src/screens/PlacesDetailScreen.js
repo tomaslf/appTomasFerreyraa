@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, FlatList } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
-import { addWishList } from '../store/actions/wishList.action'
+import { addWishList, emptyWishList } from '../store/actions/wishList.action'
 import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
 
@@ -12,7 +12,12 @@ const PlacesDetailScreen = ({ navigation }) => {
 
   const dispatch = useDispatch()
   const detail = useSelector(state => state.places.selected)
-  const [like, setLike] = useState(<Ionicons name="heart-outline" size={30} color='black' />)
+  const [heartIcon, setHeartIcon] = useState({
+    name: "heart-outline",
+    isInWishList: false
+  });
+
+
 
   const dataImages = [
     { id: 1, uri: detail.img },
@@ -26,9 +31,14 @@ const PlacesDetailScreen = ({ navigation }) => {
 
 
   const handleWishList = () => {
-    dispatch(addWishList(detail))
-    setLike(<Ionicons name="heart" size={30} color='black' />)
-  }
+    if (heartIcon.isInWishList) {
+      dispatch(emptyWishList(detail.id));
+      setHeartIcon({ name: "heart-outline", isInWishList: false });
+    } else {
+      dispatch(addWishList(detail));
+      setHeartIcon({ name: "heart", isInWishList: true });
+    }
+  };
 
   const handleHotel = () => {
     navigation.navigate("Hotel", {
@@ -67,7 +77,7 @@ const PlacesDetailScreen = ({ navigation }) => {
           <View style={styles.cityContainer}>
             <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
             <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginTop: 10 }}>
-              {like}
+              <Ionicons name={heartIcon.name} size={30} color='black' />
             </TouchableOpacity>
           </View>
           <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop: 5 }} />

@@ -6,9 +6,11 @@ const initialState = {
 
 const whishListReducer = (state = initialState, action) => {
     switch (action.type) {
+
         case EMPTY_WISHLIST:
-            const emptyWishList = [...state.items].filter((item) => item === action.itemId)
-            return { ...state, items: emptyWishList }
+                const updatedWishList = state.items.filter((item) => item && item.id !== action.itemId);
+                return { ...state, items: updatedWishList };
+              
 
         case ADD_WISHLIST:
             const indexItem = state.items.findIndex((item) => item.id === action.item.id)
@@ -19,7 +21,7 @@ const whishListReducer = (state = initialState, action) => {
             }
             const items = [...state.items].map((item) => {
                 if (item.id === action.item.id)
-                return item
+                    return item
             })
             return { ...state, items }
 

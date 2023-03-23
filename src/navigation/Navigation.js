@@ -1,7 +1,6 @@
 import React from 'react'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from '../screens/Home';
-import ConfirmListScreen from "../screens/ConfirmListScreen";
 import CategoriesScreen from '../screens/CategoriesScreen';
 import PlacesScreen from '../screens/PlacesScreen';
 import PlacesDetailScreen from '../screens/PlacesDetailScreen';
@@ -25,7 +24,6 @@ const Navigation = () => {
                 headerTransparent: true,
                 headerShown: false
             }} />
-            <Stack.Screen name="ConfirmList" component={ConfirmListScreen} />
             <Stack.Screen name="Details" component={PlacesDetailScreen} />
             <Stack.Screen name="Categories" component={CategoriesScreen} options={{ title: "Choose your type" }} />
             <Stack.Screen name="Places" component={PlacesScreen} options={({ route }) => ({
