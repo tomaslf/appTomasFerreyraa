@@ -13,9 +13,6 @@ const HotelScreen = ({ route }) => {
       setLoader(false);
     }, 4000)
   })
-  useEffect(() => {
-    console.log(route.params.hotels) 
-   }, [])
 
   return (
     <View style={styles.container}>

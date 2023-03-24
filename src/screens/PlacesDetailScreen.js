@@ -52,7 +52,7 @@ const PlacesDetailScreen = ({ navigation }) => {
 
   const handleMaps = () => {
     navigation.navigate("Maps", {
-      hotels: detail.maps,
+      maps: detail.maps,
     })
   }
 

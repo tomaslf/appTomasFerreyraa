@@ -6,8 +6,8 @@ import PlacesScreen from '../screens/PlacesScreen';
 import PlacesDetailScreen from '../screens/PlacesDetailScreen';
 import HotelScreen from '../screens/HotelScreen';
 import ReviewScreen from '../screens/ReviewScreen';
-import MapScreen from '../screens/MapScreen'
 import colorss from '../constants/colorss';
+import MapScreen from '../screens/MapScreen';
 
 
 

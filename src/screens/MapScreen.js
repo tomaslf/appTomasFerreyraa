@@ -13,10 +13,6 @@ const MapScreen = ({ route }) => {
       setLoader(false);
     }, 6000)
   })
-  useEffect(() => {
-    console.log(route.params.maps)
-  }, [])
-
 
   return (
     <View style={styles.container}>
@@ -24,7 +20,7 @@ const MapScreen = ({ route }) => {
         source={require("../assets/images/78072-map-pin-location.json")}
         style={styles.animation}
         autoPlay
-      /> : <WebView style={{ backgroundColor: colorss.backgroundColor }} source={{ uri: route.params.maps }} />}
+      /> : <WebView style={{ backgroundColor: colorss.backgroundColor }} source={{uri: route.params.maps}} />}
     </View>
   )
 }

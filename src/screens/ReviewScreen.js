@@ -31,7 +31,11 @@ const ReviewScreen = ({ navigation }) => {
     return (
         <ScrollView style={styles.all}>
             <View style={styles.container}>
-                <TextInput style={styles.input} placeholder={'City'} onChangeText={handleCityChange} value={cityName} />
+                <View style={styles.inputContainer}>
+                    <Text>City</Text>
+                    <TextInput style={styles.input} placeholder={'City'} onChangeText={handleCityChange} value={cityName} />
+                </View>
+
                 <TextInput style={styles.input} placeholder={'Tell us about the place (Max. 50)'} maxLength={50} onChangeText={handleTitleChange} value={title} />
                 <ImageReviewSelector onImage={setImage} />
                 <TouchableOpacity style={styles.review} onPress={handleSave}>
@@ -61,10 +65,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
     textReview: {
         fontSize: 14,
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
     },
     container: {
         flex: 1,
@@ -75,10 +84,11 @@ const styles = StyleSheet.create({
         marginBottom: 16
     },
     input: {
-        borderBottomColor: 'black',
-        borderBottomWidth: 1,
-        marginBottom: 16,
+        backgroundColor: 'blue',
+        width: 250,
+        marginHorizontal:10,
         paddingHorizontal: 2,
-        paddingVertical: 4
+        paddingVertical: 4,
+        marginBottom: 10
     }
 })
