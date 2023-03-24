@@ -6,6 +6,7 @@ import PlacesScreen from '../screens/PlacesScreen';
 import PlacesDetailScreen from '../screens/PlacesDetailScreen';
 import HotelScreen from '../screens/HotelScreen';
 import ReviewScreen from '../screens/ReviewScreen';
+import MapScreen from '../screens/MapScreen'
 import colorss from '../constants/colorss';
 
 
@@ -31,6 +32,7 @@ const Navigation = () => {
             })} />
             <Stack.Screen name="Hotel" component={HotelScreen} options={{ title: "Hotels" }} />
             <Stack.Screen name="Review" component={ReviewScreen} options={{ title: "Add Review" }} />
+            <Stack.Screen name="Maps" component={MapScreen} options={{ title: "Maps" }} />
         </Stack.Navigator>
 
 

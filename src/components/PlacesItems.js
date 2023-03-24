@@ -41,7 +41,9 @@ const styles = StyleSheet.create({
   cityContainer: {
     width: '100%',
     height: '30%',
-    marginLeft: 5,
+    marginRight:8,
+    marginLeft:5,
+    marginTop:2
 
   },
   image: {

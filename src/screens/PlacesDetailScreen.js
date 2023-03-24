@@ -50,6 +50,11 @@ const PlacesDetailScreen = ({ navigation }) => {
     navigation.navigate("Review")
   }
 
+  const handleMaps = () => {
+    navigation.navigate("Maps", {
+      hotels: detail.maps,
+    })
+  }
 
 
 
@@ -65,7 +70,7 @@ const PlacesDetailScreen = ({ navigation }) => {
           />
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.icons} >
-              <Ionicons name="map" size={30} color='black' />
+              <Ionicons name="map" size={30}  onPress={handleMaps} color='black' />
             </TouchableOpacity>
             <TouchableOpacity style={styles.icons} onPress={handleReview} >
               <Ionicons name="camera" size={30} color='black' />
@@ -76,7 +81,7 @@ const PlacesDetailScreen = ({ navigation }) => {
           </View>
           <View style={styles.cityContainer}>
             <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
-            <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginTop: 10 }}>
+            <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginLeft:10, marginTop: 10 }}>
               <Ionicons name={heartIcon.name} size={30} color='black' />
             </TouchableOpacity>
           </View>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { FlatList, StyleSheet, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
+import { FlatList, StyleSheet, View, KeyboardAvoidingView } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import PlacesItems from '../components/PlacesItems'
 import colorss from '../constants/colorss'
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     },
     placesContainer: {
         padding: 5,
-        height: 200,
+        height: 210,
         width: 190,
     }
 })
