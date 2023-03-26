@@ -1,13 +1,17 @@
 {
   "expo": {
-    "name": "apptomas",
-    "slug": "apptomas",
+    "name": "TravelTomic",
+    "slug": "TravelTomic",
     "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/travetomiclogo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/travetomiclogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,13 +22,22 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.coderhouse.places",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.coderhouse.places",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/travetomiclogo.png",
+        "backgroundColor": "#D0B8A8"
+      },
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
