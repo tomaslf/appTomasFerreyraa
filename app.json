@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "TravelTomic",
-    "slug": "TravelTomic",
+    "slug": "traveltomic",
     "version": "1.0.0",
     "platforms": [
       "ios",
@@ -41,6 +41,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5c3f8942-bb39-4028-a9d1-3e34b3c541a4"
+      }
+    },
+    "owner": "tomaslf"
   }
 }
