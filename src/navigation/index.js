@@ -26,8 +26,9 @@ export default () => {
                     autoPlay
                 /> :
 
-                <BottomTabNavigator />
-            }</>
+               (userId) ? <BottomTabNavigator /> : <AuthNavigator/>  
+            }
+            </>
     )
 }
 

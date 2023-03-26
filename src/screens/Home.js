@@ -1,36 +1,55 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import { StyleSheet, ImageBackground, View, KeyboardAvoidingView, ScrollView, TouchableOpacity, Text } from 'react-native';
 import Header from '../components/Header'
 import colorss from '../constants/colorss';
 import Ionicons from '@expo/vector-icons/Ionicons'
+import LottieView from "lottie-react-native";
 
 
 
 const Home = ({ navigation }) => {
- 
-    
+
+    const [loader, setLoader] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false);
+        }, 2000)
+    })
+
+
     return (
-        <KeyboardAvoidingView style={{ flex: 1 }}>
-                <ImageBackground source={{ uri: "https://img.freepik.com/premium-photo/plane-passport-boarding-pass-travel_23-2148169920.jpg?w=2000" }} resizeMode="cover" style={styles.image}>
-                    <ScrollView>
-                        <View style={styles.container}>
-                            <View>
-                                <Header newStyles={styles.header} title={"Explore the world"} />
-                                <Text style={styles.subHeader}>Everything you can imagine, is here</Text>
-                            </View>
-                            <View style={styles.buttonContainer} >
-                                <View style={styles.buttonTravel} >
-                                    <Text style={styles.text} >Discover</Text>
-                                    <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
-                                        <Ionicons style={styles.icon} name="arrow-forward-outline" size={30} color='black' />
-                                    </TouchableOpacity>
+        <>
+            {(loader) ?
+                <LottieView
+                    source={require("../assets/images/19080-travel-the-world")}
+                    style={styles.animation}
+                    autoPlay
+                /> :
+                <KeyboardAvoidingView style={{ flex: 1 }}>
+                    <ImageBackground source={{ uri: "https://img.freepik.com/premium-photo/plane-passport-boarding-pass-travel_23-2148169920.jpg?w=2000" }} resizeMode="cover" style={styles.image}>
+                        <ScrollView>
+                            <View style={styles.container}>
+                                <View>
+                                    <Header newStyles={styles.header} title={"Explore the world"} />
+                                    <Text style={styles.subHeader}>Everything you can imagine, is here</Text>
+                                </View>
+                                <View style={styles.buttonContainer} >
+                                    <View style={styles.buttonTravel} >
+                                        <Text style={styles.text} >Discover</Text>
+                                        <TouchableOpacity onPress={() => navigation.navigate('Categories')}>
+                                            <Ionicons style={styles.icon} name="arrow-forward-outline" size={30} color='black' />
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             </View>
-                        </View>
-                    </ScrollView>
-                </ImageBackground>
+                        </ScrollView>
+                    </ImageBackground>
 
-        </KeyboardAvoidingView>
+                </KeyboardAvoidingView>
+
+            }
+        </>
     )
 }
 
@@ -50,10 +69,10 @@ const styles = StyleSheet.create({
 
     },
     buttonTravel: {
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-around',
-        backgroundColor:colorss.tabBarColor,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        backgroundColor: colorss.tabBarColor,
         borderRadius: 15,
         padding: 15,
         shadowColor: 'black',
@@ -63,11 +82,11 @@ const styles = StyleSheet.create({
         elevation: 6,
 
     },
-    icon:{
-        backgroundColor:colorss.headerColor,
-        padding:10,
-        borderRadius:15,
-        
+    icon: {
+        backgroundColor: colorss.headerColor,
+        padding: 10,
+        borderRadius: 15,
+
     },
     image: {
         flex: 1,
@@ -81,7 +100,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 45,
         fontStyle: 'bolder',
-        marginTop:25,
+        marginTop: 25,
 
     },
     subHeader: {

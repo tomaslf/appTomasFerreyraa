@@ -40,9 +40,9 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     backgroundColor: colorss.backgroundColor,
-    marginBottom: 60,
-    marginLeft: 20,
-    marginRight: 20
+    marginBottom: 50,
+    marginLeft: 30,
+    marginRight: 30
   },
 
 })

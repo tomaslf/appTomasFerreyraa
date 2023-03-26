@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addWishList, emptyWishList } from '../store/actions/wishList.action'
 import colorss from '../constants/colorss'
 import Ionicons from '@expo/vector-icons/Ionicons'
-
+import ToastManager, { Toast } from 'toastify-react-native'
 
 
 
@@ -17,6 +17,13 @@ const PlacesDetailScreen = ({ navigation }) => {
     isInWishList: false
   });
 
+  const showToasts = () => {
+    Toast.success('Added','top')
+  }
+
+  const noShowToast = () =>{
+    Toast.warn('Deleted')
+  }
 
 
   const dataImages = [
@@ -33,10 +40,13 @@ const PlacesDetailScreen = ({ navigation }) => {
   const handleWishList = () => {
     if (heartIcon.isInWishList) {
       dispatch(emptyWishList(detail.id));
-      setHeartIcon({ name: "heart-outline", isInWishList: false });
+      setHeartIcon({ name: "heart-outline", isInWishList: false })
+      noShowToast()
+        ;
     } else {
       dispatch(addWishList(detail));
-      setHeartIcon({ name: "heart", isInWishList: true });
+      setHeartIcon({ name: "heart", isInWishList: true })
+      showToasts();
     }
   };
 
@@ -60,6 +70,7 @@ const PlacesDetailScreen = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1 }}>
+      <ToastManager />
       <ScrollView>
         <View style={styles.container}>
           <FlatList
@@ -70,7 +81,7 @@ const PlacesDetailScreen = ({ navigation }) => {
           />
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.icons} >
-              <Ionicons name="map" size={30}  onPress={handleMaps} color='black' />
+              <Ionicons name="map" size={30} onPress={handleMaps} color='black' />
             </TouchableOpacity>
             <TouchableOpacity style={styles.icons} onPress={handleReview} >
               <Ionicons name="camera" size={30} color='black' />
@@ -81,7 +92,7 @@ const PlacesDetailScreen = ({ navigation }) => {
           </View>
           <View style={styles.cityContainer}>
             <Text style={styles.cityText}>{detail.city},{detail.country}</Text>
-            <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginLeft:10, marginTop: 10 }}>
+            <TouchableOpacity onPress={handleWishList} style={{ marginRight: 25, marginLeft: 10, marginTop: 10 }}>
               <Ionicons name={heartIcon.name} size={30} color='black' />
             </TouchableOpacity>
           </View>

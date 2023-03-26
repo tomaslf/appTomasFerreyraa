@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, TextInput, Button } from 'react-native'
+import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, TextInput, Button, Alert } from 'react-native'
 import { signUp } from '../store/actions/auth.action'
 import LottieView from "lottie-react-native";
 import colorss from '../constants/colorss'
@@ -12,9 +12,22 @@ const AuthScreen = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [isValidPassword, setIsValidPassword] = useState(false)
+
+    const validatePassword = () => {
+        if (password.length >= 7) {
+            setIsValidPassword(true)
+        } else {
+            setIsValidPassword(false)
+        }
+    }
 
     const handleSignUp = () => {
-        dispatch(signUp(email, password))
+        if (isValidPassword) {
+            dispatch(signUp(email, password))
+        } else {
+            Alert.alert('Invalid password', 'Please enter a password of at least 7 characters')
+        }
     }
 
     return (
@@ -29,16 +42,12 @@ const AuthScreen = () => {
                 <Text style={styles.text}>Email</Text>
                 <TextInput style={styles.textInput} autoCapitalize='none' keyboardType='email-adress' value={email} onChangeText={setEmail} />
                 <Text style={styles.text}>Password</Text>
-                <TextInput style={styles.textInput} secureTextEntry autoCapitalize='none' value={password} onChangeText={setPassword} />
+                <TextInput style={styles.textInput} secureTextEntry autoCapitalize='none' value={password} onChangeText={(text) => {
+                    setPassword(text)
+                    validatePassword()
+                }} />
                 <View style={styles.buttonContainer}>
-                    <Button title='Register' onPress={handleSignUp} />
-                </View>
-
-                <View style={styles.prompt}>
-                    <Text style={styles.promptMessage}>Ya Tienes una cuenta</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.promptButton}>Log In</Text>
-                    </TouchableOpacity>
+                    <Button title='Register' color={colorss.headerColor} onPress={handleSignUp} />
                 </View>
             </View>
         </KeyboardAvoidingView>
