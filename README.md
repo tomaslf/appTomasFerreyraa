@@ -1,7 +1,24 @@
-# AppTomasFerreyra 
+# TravelTomic App 
 
-## Preview 
+## Descripcion
+
+TravelTomic App es una aplicación móvil que te permite descubrir lugares a los que te gustaría viajar, guardarlos en una lista de deseos (bucket list) y subir comentarios de los lugares visitados a través de reseñas.
+
+La aplicación ha sido desarrollada con React Native, lo que permite su funcionamiento en dispositivos iOS y Android.
 
 
-![WhatsApp Video 2023-02-08 at 00 32 45](https://user-images.githubusercontent.com/104037738/217394086-f75d40ea-22de-4cb1-a1aa-bf7140fd75fe.gif)
+## Funcionalidades
 
+Registro y autenticación de usuarios mediante Firebase Authentication
+Explorar lugares por categoría
+Añadir lugares a la lista de deseos
+Consultar detalles de los lugares (ubicación, descripción)
+Subir reseñas de lugares visitados
+
+
+## Preview de TravelTomic App
+
+
+
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/104037738/227949822-c32d8148-ca8c-46de-8c4a-fde8945d0988.gif)
+![ezgif com-optimize](https://user-images.githubusercontent.com/104037738/227949863-1b1e152f-6368-47ec-af56-f234d8bf089b.gif)
