@@ -19,6 +19,8 @@ Subir reseñas de lugares visitados
 ## Preview de TravelTomic App
 
 
-
-![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/104037738/227949822-c32d8148-ca8c-46de-8c4a-fde8945d0988.gif)
 ![ezgif com-optimize](https://user-images.githubusercontent.com/104037738/227949863-1b1e152f-6368-47ec-af56-f234d8bf089b.gif)
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/104037738/227949822-c32d8148-ca8c-46de-8c4a-fde8945d0988.gif)
+
+
+![ezgif com-optimize (1)](https://user-images.githubusercontent.com/104037738/227950163-4e39a306-acae-47dd-9f86-5eca77e774e2.gif)
